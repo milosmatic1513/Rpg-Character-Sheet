@@ -15,75 +15,99 @@ namespace WindowsFormsApp5
         Player player;
         private class Player
         {
-            public int[] abbility_scores= {0,0,0,0,0,0};
-            public int[] abbility_moddifiers = { 0, 0, 0, 0, 0, 0 };
-            public int prof = 0;
+            public AbilityScore[] abilityScores;
+            public int[] ability_scores = new int[6];
+            public int[] ability_modifiers = new int[6];
+            public int prof = 1;
             public int ac = 0;
             public void add_score(int score_addition,int score_number)
             {
-                if (abbility_scores[score_number] < 20)
+                if (ability_scores[score_number] < 20 && ability_scores[score_number] > 0)
                 {
-                    abbility_scores[score_number] += score_addition;
-                    abbility_moddifiers[score_number] = (abbility_scores[score_number] % 10) / 2 + (abbility_scores[score_number] / 10 - 1) * 5;
+                    ability_scores[score_number] += score_addition;
+                    abilityScores[score_number].Score(ability_scores[score_number]);
+                    ability_modifiers[score_number] = abilityScores[score_number].GetModifier();
                 }
             }
             public void update_score(Label abbility,Label moddifier,int score)
             {
-                abbility.Text = abbility_scores[score].ToString();
-                if (abbility_moddifiers[score]>=0) moddifier.Text ="+"+ abbility_moddifiers[score].ToString();
-                else moddifier.Text = abbility_moddifiers[score].ToString();
+                abbility.Text = ability_scores[score].ToString();
+                if (ability_modifiers[score]>=0) moddifier.Text ="+"+ ability_modifiers[score].ToString();
+                else moddifier.Text = ability_modifiers[score].ToString();
             }
             public void update_general(Label target , int score)
             {
                 target.Text = "+" + score.ToString();
             }
         }
+
         public cha_save()
         {
             InitializeComponent();
             player = new Player();
+            player.abilityScores = new AbilityScore[6];
+        }
 
+        public void UpdateSavingThrows()
+        {
+            if (str_save.Checked) str_save_CheckedChanged(null,null);
+            if (dex_save.Checked) dex_save_CheckedChanged(null,null);
+            if (cons_save.Checked) cons_save_CheckedChanged(null,null);
+            if (intel_save.Checked) intel_save_CheckedChanged(null,null);
+            if (wis_save.Checked) wis_save_CheckedChanged(null,null);
+            if (chaa_save.Checked) cha_save_CheckedChanged(null,null);
         }
 
         private void str_button_Click(object sender, EventArgs e)
         {
             player.add_score(1, 0);
-            player.update_score(str_lbl, str_mod_lbl, 0);
+            UpdateSavingThrows();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            int index = 0;
+            foreach (Control x in this.Controls)
+            {
+                if (x.GetType() == typeof(AbilityScore))
+                {
+                    AbilityScore ab = (AbilityScore)x;
+                    player.ability_scores[index] = ab.GetScore();
+                    player.ability_modifiers[index] = ab.GetModifier();
+                    player.abilityScores[5 - index] = ab;
+                    index++;
+                }
+            }
         }
 
         private void dex_button_Click(object sender, EventArgs e)
         {
             player.add_score(1,1);
-            player.update_score(dex_lbl, dex_mod_lbl, 1);
+            UpdateSavingThrows();
         }
 
         private void cons_button_Click(object sender, EventArgs e)
         {
             player.add_score(1, 2);
-            player.update_score(cons_lbl, cons_mod_lbl, 2);
+            UpdateSavingThrows();
         }
 
         private void intel_button_Click(object sender, EventArgs e)
         {
             player.add_score(1, 3);
-            player.update_score(intel_lbl, intel_mod_lbl, 3);
+            UpdateSavingThrows();
         }
 
         private void wis_button_Click(object sender, EventArgs e)
         {
             player.add_score(1, 4);
-            player.update_score(wis_lbl, wis_mod_lbl, 4);
+            UpdateSavingThrows();
         }
 
         private void cha_button_Click(object sender, EventArgs e)
         {
             player.add_score(1, 5);
-            player.update_score(cha_lbl, cha_mod_lbl, 5);
+            UpdateSavingThrows();
         }
 
         private void lvl_up(object sender, EventArgs e)
@@ -94,7 +118,6 @@ namespace WindowsFormsApp5
             intel_button.Visible = true;
             wis_button.Visible = true;
             cha_button.Visible = true;
-            prof_button.Visible = true;
             done.Visible = true;
         }
 
@@ -106,8 +129,11 @@ namespace WindowsFormsApp5
             intel_button.Visible = false;
             wis_button.Visible = false;
             cha_button.Visible = false;
-            prof_button.Visible = false;
             done.Visible = false;
+            label3.Text = (int.Parse(label3.Text) + 1).ToString();
+            if (label3.Text == "20") button1.Enabled = false;
+            prof_lbl.Text = ((int.Parse(label3.Text) + 7) / 4).ToString();
+            UpdateSavingThrows();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -115,18 +141,12 @@ namespace WindowsFormsApp5
 
         }
 
-        private void prof_button_Click(object sender, EventArgs e)
-        {
-            player.prof += 1;
-            player.update_general(prof_lbl, player.prof);
-        }
-
         private void str_save_CheckedChanged(object sender, EventArgs e)
         {
             if (str_save.Checked)
             {
                 str_save_mod.Visible = true;
-                str_save_mod.Text = "+" + (player.abbility_moddifiers[0] + player.prof);
+                str_save_mod.Text = "+" + (player.ability_modifiers[0] + player.prof);
             }
             else
             {
@@ -138,7 +158,7 @@ namespace WindowsFormsApp5
             if (dex_save.Checked)
             {
                 dex_save_mod.Visible = true;
-                dex_save_mod.Text = "+" + (player.abbility_moddifiers[1] + player.prof);
+                dex_save_mod.Text = "+" + (player.ability_modifiers[1] + player.prof);
             }
             else
             {
@@ -151,7 +171,7 @@ namespace WindowsFormsApp5
             if (cons_save.Checked)
             {
                 cons_save_mod.Visible = true;
-                cons_save_mod.Text = "+" + (player.abbility_moddifiers[2] + player.prof);
+                cons_save_mod.Text = "+" + (player.ability_modifiers[2] + player.prof);
             }
             else
             {
@@ -164,7 +184,7 @@ namespace WindowsFormsApp5
             if (wis_save.Checked)
             {
                 wis_save_mod.Visible = true;
-                wis_save_mod.Text = "+" + (player.abbility_moddifiers[3] + player.prof);
+                wis_save_mod.Text = "+" + (player.ability_modifiers[4] + player.prof);
             }
             else
             {
@@ -177,7 +197,7 @@ namespace WindowsFormsApp5
             if (chaa_save.Checked)
             {
                 cha_save_mod.Visible = true;
-                cha_save_mod.Text = "+" + (player.abbility_moddifiers[4] + player.prof);
+                cha_save_mod.Text = "+" + (player.ability_modifiers[5] + player.prof);
             }
             else
             {
@@ -190,12 +210,42 @@ namespace WindowsFormsApp5
             if (intel_save.Checked)
             {
                 intel_save_mod.Visible = true;
-                intel_save_mod.Text = "+" + (player.abbility_moddifiers[5] + player.prof);
+                intel_save_mod.Text = "+" + (player.ability_modifiers[3] + player.prof);
             }
             else
             {
                 intel_save_mod.Visible = false;
             }
+        }
+
+        private void abilityScore1_Load(object sender, EventArgs e)
+        {
+            abilityScore1.Ability("STRENGTH");
+        }
+
+        private void abilityScore2_Load(object sender, EventArgs e)
+        {
+            abilityScore2.Ability("DEXTERITY");
+        }
+
+        private void abilityScore3_Load(object sender, EventArgs e)
+        {
+            abilityScore3.Ability("CONSTITUTION");
+        }
+
+        private void abilityScore4_Load(object sender, EventArgs e)
+        {
+            abilityScore4.Ability("INTELLIGENCE");
+        }
+
+        private void abilityScore5_Load(object sender, EventArgs e)
+        {
+            abilityScore5.Ability("WISDOM");
+        }
+
+        private void abilityScore6_Load(object sender, EventArgs e)
+        {
+            abilityScore6.Ability("CHARISMA");
         }
     }
 }

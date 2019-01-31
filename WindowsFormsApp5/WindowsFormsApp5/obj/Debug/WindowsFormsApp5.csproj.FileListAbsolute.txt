@@ -18,3 +18,4 @@ J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\ob
 J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.csproj.CoreCompileInputs.cache
 J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.exe
 J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.pdb
+J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.AbilityScore.resources
