@@ -14,9 +14,9 @@ namespace WindowsFormsApp5
     public partial class cha_save : Form
     {
         Player player;
+        public AbilityScore[] abilityScores;
         private class Player
         {
-            public AbilityScore[] abilityScores;
             public Hashtable player_stats = new Hashtable();
             public int prof = 0;
             public int ac = 0;
@@ -34,7 +34,7 @@ namespace WindowsFormsApp5
         {
             InitializeComponent();
             player = new Player();
-            player.abilityScores = new AbilityScore[6];
+            abilityScores = new AbilityScore[6];
         }
 
         public void UpdateGeneral()
@@ -80,12 +80,12 @@ namespace WindowsFormsApp5
         private void Form1_Load(object sender, EventArgs e)
         {
             player.prof = int.Parse(prof_lbl.Text);
-            player.player_stats.Add("str", player.abilityScores[0]);
-            player.player_stats.Add("dex", player.abilityScores[1]);
-            player.player_stats.Add("con", player.abilityScores[2]);
-            player.player_stats.Add("int", player.abilityScores[3]);
-            player.player_stats.Add("wis", player.abilityScores[4]);
-            player.player_stats.Add("cha", player.abilityScores[5]);
+            player.player_stats.Add("str", abilityScores[0]);
+            player.player_stats.Add("dex", abilityScores[1]);
+            player.player_stats.Add("con", abilityScores[2]);
+            player.player_stats.Add("int", abilityScores[3]);
+            player.player_stats.Add("wis", abilityScores[4]);
+            player.player_stats.Add("cha", abilityScores[5]);
         }
 
         private void dex_button_Click(object sender, EventArgs e)
@@ -257,37 +257,37 @@ namespace WindowsFormsApp5
         private void abilityScore1_Load(object sender, EventArgs e)
         {
             abilityScore1.Ability("STRENGTH");
-            player.abilityScores[0] = abilityScore1;
+            abilityScores[0] = abilityScore1;
         }
 
         private void abilityScore2_Load(object sender, EventArgs e)
         {
             abilityScore2.Ability("DEXTERITY");
-            player.abilityScores[1] = abilityScore2;
+            abilityScores[1] = abilityScore2;
         }
 
         private void abilityScore3_Load(object sender, EventArgs e)
         {
             abilityScore3.Ability("CONSTITUTION");
-            player.abilityScores[2] = abilityScore3;
+            abilityScores[2] = abilityScore3;
         }
 
         private void abilityScore4_Load(object sender, EventArgs e)
         {
             abilityScore4.Ability("INTELLIGENCE");
-            player.abilityScores[3] = abilityScore4;
+            abilityScores[3] = abilityScore4;
         }
 
         private void abilityScore5_Load(object sender, EventArgs e)
         {
             abilityScore5.Ability("WISDOM");
-            player.abilityScores[4] = abilityScore5;
+            abilityScores[4] = abilityScore5;
         }
 
         private void abilityScore6_Load(object sender, EventArgs e)
         {
             abilityScore6.Ability("CHARISMA");
-            player.abilityScores[5] = abilityScore6;
+            abilityScores[5] = abilityScore6;
         }
 
         private void button3_Click(object sender, EventArgs e)
