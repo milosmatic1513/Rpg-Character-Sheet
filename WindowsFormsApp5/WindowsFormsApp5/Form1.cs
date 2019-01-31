@@ -18,7 +18,7 @@ namespace WindowsFormsApp5
             public AbilityScore[] abilityScores;
             public int[] ability_scores = new int[6];
             public int[] ability_modifiers = new int[6];
-            public int prof = 1;
+            public int prof = 0;
             public int ac = 0;
             public void add_score(int score_addition,int score_number)
             {
@@ -66,18 +66,12 @@ namespace WindowsFormsApp5
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            int index = 0;
-            foreach (Control x in this.Controls)
+            for (int i = 0; i < 6; i++)
             {
-                if (x.GetType() == typeof(AbilityScore))
-                {
-                    AbilityScore ab = (AbilityScore)x;
-                    player.ability_scores[index] = ab.GetScore();
-                    player.ability_modifiers[index] = ab.GetModifier();
-                    player.abilityScores[5 - index] = ab;
-                    index++;
-                }
+                player.ability_scores[i] = player.abilityScores[i].GetScore();
+                player.ability_modifiers[i] = player.abilityScores[i].GetModifier();
             }
+            player.prof = int.Parse(prof_lbl.Text);
         }
 
         private void dex_button_Click(object sender, EventArgs e)
@@ -133,6 +127,7 @@ namespace WindowsFormsApp5
             label3.Text = (int.Parse(label3.Text) + 1).ToString();
             if (label3.Text == "20") button1.Enabled = false;
             prof_lbl.Text = ((int.Parse(label3.Text) + 7) / 4).ToString();
+            player.prof = int.Parse(prof_lbl.Text);
             UpdateSavingThrows();
         }
 
@@ -221,31 +216,37 @@ namespace WindowsFormsApp5
         private void abilityScore1_Load(object sender, EventArgs e)
         {
             abilityScore1.Ability("STRENGTH");
+            player.abilityScores[0] = abilityScore1;
         }
 
         private void abilityScore2_Load(object sender, EventArgs e)
         {
             abilityScore2.Ability("DEXTERITY");
+            player.abilityScores[1] = abilityScore2;
         }
 
         private void abilityScore3_Load(object sender, EventArgs e)
         {
             abilityScore3.Ability("CONSTITUTION");
+            player.abilityScores[2] = abilityScore3;
         }
 
         private void abilityScore4_Load(object sender, EventArgs e)
         {
             abilityScore4.Ability("INTELLIGENCE");
+            player.abilityScores[3] = abilityScore4;
         }
 
         private void abilityScore5_Load(object sender, EventArgs e)
         {
             abilityScore5.Ability("WISDOM");
+            player.abilityScores[4] = abilityScore5;
         }
 
         private void abilityScore6_Load(object sender, EventArgs e)
         {
             abilityScore6.Ability("CHARISMA");
+            player.abilityScores[5] = abilityScore6;
         }
     }
 }

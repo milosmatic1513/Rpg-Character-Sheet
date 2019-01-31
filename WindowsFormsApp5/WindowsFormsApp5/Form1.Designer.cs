@@ -138,7 +138,7 @@
             // cha_button
             // 
             this.cha_button.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cha_button.Location = new System.Drawing.Point(124, 463);
+            this.cha_button.Location = new System.Drawing.Point(124, 458);
             this.cha_button.Name = "cha_button";
             this.cha_button.Size = new System.Drawing.Size(41, 42);
             this.cha_button.TabIndex = 6;
