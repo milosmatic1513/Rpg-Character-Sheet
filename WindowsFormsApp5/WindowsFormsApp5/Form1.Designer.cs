@@ -54,20 +54,28 @@
             this.cons_save_mod = new System.Windows.Forms.Label();
             this.dex_save_mod = new System.Windows.Forms.Label();
             this.str_save_mod = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.str_minus = new System.Windows.Forms.Button();
+            this.dex_minus = new System.Windows.Forms.Button();
+            this.con_minus = new System.Windows.Forms.Button();
+            this.int_minus = new System.Windows.Forms.Button();
+            this.wis_minus = new System.Windows.Forms.Button();
+            this.cha_minus = new System.Windows.Forms.Button();
             this.abilityScore6 = new WindowsFormsApp5.AbilityScore();
             this.abilityScore5 = new WindowsFormsApp5.AbilityScore();
             this.abilityScore4 = new WindowsFormsApp5.AbilityScore();
             this.abilityScore3 = new WindowsFormsApp5.AbilityScore();
             this.abilityScore2 = new WindowsFormsApp5.AbilityScore();
             this.abilityScore1 = new WindowsFormsApp5.AbilityScore();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(27, 12);
+            this.button1.Location = new System.Drawing.Point(12, 13);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -78,9 +86,9 @@
             // str_button
             // 
             this.str_button.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.str_button.Location = new System.Drawing.Point(124, 56);
+            this.str_button.Location = new System.Drawing.Point(124, 50);
             this.str_button.Name = "str_button";
-            this.str_button.Size = new System.Drawing.Size(41, 42);
+            this.str_button.Size = new System.Drawing.Size(25, 25);
             this.str_button.TabIndex = 2;
             this.str_button.Text = "+";
             this.str_button.UseVisualStyleBackColor = true;
@@ -90,9 +98,9 @@
             // dex_button
             // 
             this.dex_button.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dex_button.Location = new System.Drawing.Point(124, 137);
+            this.dex_button.Location = new System.Drawing.Point(124, 130);
             this.dex_button.Name = "dex_button";
-            this.dex_button.Size = new System.Drawing.Size(41, 42);
+            this.dex_button.Size = new System.Drawing.Size(25, 25);
             this.dex_button.TabIndex = 4;
             this.dex_button.Text = "+";
             this.dex_button.UseVisualStyleBackColor = true;
@@ -102,9 +110,9 @@
             // cons_button
             // 
             this.cons_button.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cons_button.Location = new System.Drawing.Point(124, 218);
+            this.cons_button.Location = new System.Drawing.Point(124, 211);
             this.cons_button.Name = "cons_button";
-            this.cons_button.Size = new System.Drawing.Size(41, 42);
+            this.cons_button.Size = new System.Drawing.Size(25, 25);
             this.cons_button.TabIndex = 4;
             this.cons_button.Text = "+";
             this.cons_button.UseVisualStyleBackColor = true;
@@ -114,9 +122,9 @@
             // intel_button
             // 
             this.intel_button.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.intel_button.Location = new System.Drawing.Point(124, 301);
+            this.intel_button.Location = new System.Drawing.Point(124, 291);
             this.intel_button.Name = "intel_button";
-            this.intel_button.Size = new System.Drawing.Size(41, 42);
+            this.intel_button.Size = new System.Drawing.Size(25, 25);
             this.intel_button.TabIndex = 4;
             this.intel_button.Text = "+";
             this.intel_button.UseVisualStyleBackColor = true;
@@ -126,9 +134,9 @@
             // wis_button
             // 
             this.wis_button.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wis_button.Location = new System.Drawing.Point(124, 381);
+            this.wis_button.Location = new System.Drawing.Point(124, 369);
             this.wis_button.Name = "wis_button";
-            this.wis_button.Size = new System.Drawing.Size(41, 42);
+            this.wis_button.Size = new System.Drawing.Size(25, 25);
             this.wis_button.TabIndex = 4;
             this.wis_button.Text = "+";
             this.wis_button.UseVisualStyleBackColor = true;
@@ -138,9 +146,9 @@
             // cha_button
             // 
             this.cha_button.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cha_button.Location = new System.Drawing.Point(124, 458);
+            this.cha_button.Location = new System.Drawing.Point(124, 451);
             this.cha_button.Name = "cha_button";
-            this.cha_button.Size = new System.Drawing.Size(41, 42);
+            this.cha_button.Size = new System.Drawing.Size(25, 25);
             this.cha_button.TabIndex = 6;
             this.cha_button.Text = "+";
             this.cha_button.UseVisualStyleBackColor = true;
@@ -149,11 +157,11 @@
             // 
             // done
             // 
-            this.done.Location = new System.Drawing.Point(90, 530);
+            this.done.Location = new System.Drawing.Point(12, 530);
             this.done.Name = "done";
             this.done.Size = new System.Drawing.Size(75, 23);
             this.done.TabIndex = 7;
-            this.done.Text = "DONE";
+            this.done.Text = "READY";
             this.done.UseVisualStyleBackColor = true;
             this.done.Visible = false;
             this.done.Click += new System.EventHandler(this.done_Click);
@@ -361,6 +369,119 @@
             this.str_save_mod.Text = "+0";
             this.str_save_mod.Visible = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("MS Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(408, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 19);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Level:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("MS Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(479, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(20, 19);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "1";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(103, 12);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(44, 23);
+            this.button3.TabIndex = 24;
+            this.button3.Text = "EDIT";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(95, 530);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(54, 23);
+            this.button4.TabIndex = 25;
+            this.button4.Text = "DONE";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Visible = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // str_minus
+            // 
+            this.str_minus.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.str_minus.Location = new System.Drawing.Point(124, 81);
+            this.str_minus.Name = "str_minus";
+            this.str_minus.Size = new System.Drawing.Size(25, 25);
+            this.str_minus.TabIndex = 26;
+            this.str_minus.Text = "-";
+            this.str_minus.UseVisualStyleBackColor = true;
+            this.str_minus.Visible = false;
+            this.str_minus.Click += new System.EventHandler(this.str_minus_Click);
+            // 
+            // dex_minus
+            // 
+            this.dex_minus.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dex_minus.Location = new System.Drawing.Point(124, 161);
+            this.dex_minus.Name = "dex_minus";
+            this.dex_minus.Size = new System.Drawing.Size(25, 25);
+            this.dex_minus.TabIndex = 27;
+            this.dex_minus.Text = "-";
+            this.dex_minus.UseVisualStyleBackColor = true;
+            this.dex_minus.Visible = false;
+            this.dex_minus.Click += new System.EventHandler(this.dex_minus_Click);
+            // 
+            // con_minus
+            // 
+            this.con_minus.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.con_minus.Location = new System.Drawing.Point(124, 242);
+            this.con_minus.Name = "con_minus";
+            this.con_minus.Size = new System.Drawing.Size(25, 25);
+            this.con_minus.TabIndex = 28;
+            this.con_minus.Text = "-";
+            this.con_minus.UseVisualStyleBackColor = true;
+            this.con_minus.Visible = false;
+            this.con_minus.Click += new System.EventHandler(this.con_minus_Click);
+            // 
+            // int_minus
+            // 
+            this.int_minus.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.int_minus.Location = new System.Drawing.Point(124, 322);
+            this.int_minus.Name = "int_minus";
+            this.int_minus.Size = new System.Drawing.Size(25, 25);
+            this.int_minus.TabIndex = 29;
+            this.int_minus.Text = "-";
+            this.int_minus.UseVisualStyleBackColor = true;
+            this.int_minus.Visible = false;
+            this.int_minus.Click += new System.EventHandler(this.int_minus_Click);
+            // 
+            // wis_minus
+            // 
+            this.wis_minus.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wis_minus.Location = new System.Drawing.Point(124, 400);
+            this.wis_minus.Name = "wis_minus";
+            this.wis_minus.Size = new System.Drawing.Size(25, 25);
+            this.wis_minus.TabIndex = 30;
+            this.wis_minus.Text = "-";
+            this.wis_minus.UseVisualStyleBackColor = true;
+            this.wis_minus.Visible = false;
+            this.wis_minus.Click += new System.EventHandler(this.wis_minus_Click);
+            // 
+            // cha_minus
+            // 
+            this.cha_minus.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cha_minus.Location = new System.Drawing.Point(124, 482);
+            this.cha_minus.Name = "cha_minus";
+            this.cha_minus.Size = new System.Drawing.Size(25, 25);
+            this.cha_minus.TabIndex = 31;
+            this.cha_minus.Text = "-";
+            this.cha_minus.UseVisualStyleBackColor = true;
+            this.cha_minus.Visible = false;
+            this.cha_minus.Click += new System.EventHandler(this.cha_minus_Click);
+            // 
             // abilityScore6
             // 
             this.abilityScore6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -415,31 +536,19 @@
             this.abilityScore1.TabIndex = 16;
             this.abilityScore1.Load += new System.EventHandler(this.abilityScore1_Load);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MS Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(408, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 19);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Level:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("MS Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(479, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(20, 19);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "1";
-            // 
             // cha_save
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 603);
+            this.Controls.Add(this.cha_minus);
+            this.Controls.Add(this.wis_minus);
+            this.Controls.Add(this.int_minus);
+            this.Controls.Add(this.con_minus);
+            this.Controls.Add(this.dex_minus);
+            this.Controls.Add(this.str_minus);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.abilityScore6);
@@ -508,6 +617,14 @@
         private AbilityScore abilityScore6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button str_minus;
+        private System.Windows.Forms.Button dex_minus;
+        private System.Windows.Forms.Button con_minus;
+        private System.Windows.Forms.Button int_minus;
+        private System.Windows.Forms.Button wis_minus;
+        private System.Windows.Forms.Button cha_minus;
     }
 }
 

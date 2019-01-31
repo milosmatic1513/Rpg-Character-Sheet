@@ -23,7 +23,7 @@ namespace WindowsFormsApp5
             AbilityScore_Load(null, null);
         }
 
-        public void Score(int score)
+        public void SetScore(int score)
         {
             textBox1.Text = score.ToString();
             AbilityScore_Load(null, null);
@@ -55,7 +55,8 @@ namespace WindowsFormsApp5
             textBox1.Location = new Point((this.Width - textBox1.Width) / 2, label1.Location.Y + label1.Height);
             label2.Font = textBox1.Font;
             label2.Location = new Point((this.Width - label2.Width) / 2, textBox1.Location.Y + textBox1.Height - 2);
-            label2.Text = ((int.Parse(textBox1.Text) - 10) / 2).ToString();
+            if ((int.Parse(textBox1.Text) - 10) >= 0) label2.Text = ((int.Parse(textBox1.Text) - 10) / 2).ToString();
+            else label2.Text = ((int.Parse(textBox1.Text) - 11) / 2).ToString();
             if (int.Parse(label2.Text) >= 0) label2.Text = "+" + label2.Text;
         }
     }
