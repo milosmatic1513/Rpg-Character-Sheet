@@ -71,13 +71,14 @@
             this.save = new System.Windows.Forms.Button();
             this.load = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.skills = new System.Windows.Forms.FlowLayoutPanel();
             this.abilityScore6 = new WindowsFormsApp5.AbilityScore();
             this.abilityScore5 = new WindowsFormsApp5.AbilityScore();
             this.abilityScore4 = new WindowsFormsApp5.AbilityScore();
             this.abilityScore3 = new WindowsFormsApp5.AbilityScore();
             this.abilityScore2 = new WindowsFormsApp5.AbilityScore();
             this.abilityScore1 = new WindowsFormsApp5.AbilityScore();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -245,7 +246,7 @@
             this.groupBox7.Controls.Add(this.con_save_mod);
             this.groupBox7.Controls.Add(this.dex_save_mod);
             this.groupBox7.Controls.Add(this.str_save_mod);
-            this.groupBox7.Location = new System.Drawing.Point(215, 210);
+            this.groupBox7.Location = new System.Drawing.Point(304, 130);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(167, 154);
             this.groupBox7.TabIndex = 15;
@@ -562,7 +563,7 @@
             // 
             // save
             // 
-            this.save.Location = new System.Drawing.Point(357, 552);
+            this.save.Location = new System.Drawing.Point(12, 559);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(75, 23);
             this.save.TabIndex = 36;
@@ -572,7 +573,7 @@
             // 
             // load
             // 
-            this.load.Location = new System.Drawing.Point(438, 552);
+            this.load.Location = new System.Drawing.Point(93, 559);
             this.load.Name = "load";
             this.load.Size = new System.Drawing.Size(75, 23);
             this.load.TabIndex = 37;
@@ -583,6 +584,15 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // skills
+            // 
+            this.skills.AutoScroll = true;
+            this.skills.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.skills.Location = new System.Drawing.Point(251, 311);
+            this.skills.Name = "skills";
+            this.skills.Size = new System.Drawing.Size(220, 222);
+            this.skills.TabIndex = 38;
             // 
             // abilityScore6
             // 
@@ -643,6 +653,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 603);
+            this.Controls.Add(this.skills);
             this.Controls.Add(this.load);
             this.Controls.Add(this.save);
             this.Controls.Add(this.comboBox1);
@@ -741,6 +752,7 @@
         private System.Windows.Forms.Button load;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.FlowLayoutPanel skills;
     }
 }
 

@@ -20,9 +20,10 @@ namespace WindowsFormsApp5
         Player player;
         AbilityScore[] abilityScores;
         BinaryFormatter formater;
-
-
-        public void hide_all()
+        AbilitySkill[] abilitySkills;
+        string[,] names;
+        
+        private void hide_all()
         {
             str_button.Visible = false;
             dex_button.Visible = false;
@@ -38,6 +39,56 @@ namespace WindowsFormsApp5
             cha_minus.Visible = false;
         }
 
+        private void addAbilityChecks()
+        {
+            names = new string[18,2];
+            names[0,0] = "Acrobatics";
+            names[1,0] = "Animal Handling";
+            names[2,0] = "Arcana";
+            names[3,0] = "Athletics";
+            names[4,0] = "Deception";
+            names[5,0] = "History";
+            names[6,0] = "Insight";
+            names[7,0] = "Intimidation";
+            names[8,0] = "Investigation";
+            names[9,0] = "Medicine";
+            names[10,0] = "Nature";
+            names[11,0] = "Perception";
+            names[12,0] = "Performance";
+            names[13,0] = "Persuasion";
+            names[14,0] = "Religion";
+            names[15,0] = "Sleight of Hand";
+            names[16,0] = "Stealth";
+            names[17,0] = "Survival";
+
+            names[0, 1] = "dex";
+            names[1, 1] = "wis";
+            names[2, 1] = "int";
+            names[3, 1] = "str";
+            names[4, 1] = "cha";
+            names[5, 1] = "int";
+            names[6, 1] = "wis";
+            names[7, 1] = "cha";
+            names[8, 1] = "int";
+            names[9, 1] = "wis";
+            names[10, 1] = "int";
+            names[11, 1] = "wis";
+            names[12, 1] = "cha";
+            names[13, 1] = "cha";
+            names[14, 1] = "int";
+            names[15, 1] = "dex";
+            names[16, 1] = "dex";
+            names[17, 1] = "wis";
+
+            for (int i=0; i<abilitySkills.Length; i++)
+            {
+                AbilitySkill ab = new AbilitySkill();
+                ab.SetAll(names[i, 0], ((AbilityScore)abilityScores[(int)player.nameToIndex[names[i, 1]]]).GetModifier(), int.Parse(prof_lbl.Text));
+                ab.Location = new Point(5, i * 20);
+                abilitySkills[i] = ab;
+                skills.Controls.Add(ab);
+            }
+        }
 
         [Serializable]
         private class Player
@@ -81,6 +132,7 @@ namespace WindowsFormsApp5
             player = new Player();
             abilityScores = new AbilityScore[6];
             formater = new BinaryFormatter();
+            abilitySkills = new AbilitySkill[18];
             foreach (int x in player.changeOnLvlUp) { player.changeOnLvlUp[x] = 0; }
         }
 
@@ -92,6 +144,11 @@ namespace WindowsFormsApp5
             if (intel_save.Checked) saving_check(intel_save);
             if (wis_save.Checked) saving_check(wis_save); 
             if (chaa_save.Checked) saving_check(chaa_save);
+
+            for (int i = 0; i < 18; i++)
+            {
+                abilitySkills[i].UpdateMod(((AbilityScore)abilityScores[(int)player.nameToIndex[names[i, 1]]]).GetModifier(), int.Parse(prof_lbl.Text));
+            }
 
             if (((AbilityScore)player.player_stats["str"]).GetScore() == 20 || ((player.changeOnLvlUp[0] == 2 || player.lvlup == 0) && !player.editOrLvl)) str_button.Visible = false;
             else str_button.Visible = true;
@@ -155,6 +212,8 @@ namespace WindowsFormsApp5
             };
             saveFileDialog1.Filter = "Character Files|*.dat";
             openFileDialog1.Filter = "Character Files|*.dat|All files|*.*";
+
+            addAbilityChecks();
         }
 
         
@@ -200,20 +259,17 @@ namespace WindowsFormsApp5
         {
             player.lvlup = -1;
             level.Text = (int.Parse(level.Text) + 1).ToString();
-            if (level.Text == "20") button1.Enabled = false;
-            prof_lbl.Text = ((int.Parse(level.Text) + 7) / 4).ToString();
+            prof_lbl.Text = ((int.Parse(level.Text) + 6) / 4).ToString();
             player.prof = int.Parse(prof_lbl.Text);
             UpdateGeneral();
             hide_all();
             done.Visible = false;
             button1.Enabled = true;
+            if (level.Text == "20") button1.Enabled = false;
             button3.Enabled = true;
             foreach (int x in player.changeOnLvlUp) { player.changeOnLvlUp[x] = 0; }
         }
 
-      
-
-    
         private void saving_check(object sender, EventArgs e)
         {
 
@@ -315,6 +371,7 @@ namespace WindowsFormsApp5
             hide_all();
             button4.Visible = false;
             button1.Enabled = true;
+            if (level.Text == "20") button1.Enabled = false;
         }
 
         private void save_Click(object sender, EventArgs e)
@@ -349,6 +406,10 @@ namespace WindowsFormsApp5
         private void load_Click(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog();
+        }
+
+        private void abilitySkill1_Load(object sender, EventArgs e)
+        {
         }
     }
 }
