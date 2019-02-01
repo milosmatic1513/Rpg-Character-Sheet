@@ -21,9 +21,9 @@ namespace WindowsFormsApp5
             proficience = 2;
         }
 
-        public void SetAll(string n, int mo, int pro)
+        public void SetAll(string n, string s, int mo, int pro)
         {
-            skill.Text = n;
+            skill.Text = n + " ( " + s + " )";
             modifier = mo;
             if (mo >= 0) mod.Text = "+" + mo.ToString();
             else mod.Text = mo.ToString();

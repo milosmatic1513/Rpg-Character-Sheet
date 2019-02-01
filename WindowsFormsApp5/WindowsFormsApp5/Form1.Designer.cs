@@ -172,7 +172,7 @@
             // 
             // done
             // 
-            this.done.Location = new System.Drawing.Point(12, 530);
+            this.done.Location = new System.Drawing.Point(12, 531);
             this.done.Name = "done";
             this.done.Size = new System.Drawing.Size(75, 23);
             this.done.TabIndex = 7;
@@ -422,7 +422,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(95, 530);
+            this.button4.Location = new System.Drawing.Point(95, 531);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(54, 23);
             this.button4.TabIndex = 25;
@@ -563,7 +563,7 @@
             // 
             // save
             // 
-            this.save.Location = new System.Drawing.Point(12, 559);
+            this.save.Location = new System.Drawing.Point(357, 568);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(75, 23);
             this.save.TabIndex = 36;
@@ -573,7 +573,7 @@
             // 
             // load
             // 
-            this.load.Location = new System.Drawing.Point(93, 559);
+            this.load.Location = new System.Drawing.Point(438, 568);
             this.load.Name = "load";
             this.load.Size = new System.Drawing.Size(75, 23);
             this.load.TabIndex = 37;
@@ -589,9 +589,9 @@
             // 
             this.skills.AutoScroll = true;
             this.skills.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.skills.Location = new System.Drawing.Point(251, 311);
+            this.skills.Location = new System.Drawing.Point(215, 294);
             this.skills.Name = "skills";
-            this.skills.Size = new System.Drawing.Size(220, 222);
+            this.skills.Size = new System.Drawing.Size(241, 259);
             this.skills.TabIndex = 38;
             // 
             // abilityScore6

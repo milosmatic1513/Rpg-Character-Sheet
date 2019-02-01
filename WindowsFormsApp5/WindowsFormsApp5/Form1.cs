@@ -83,7 +83,7 @@ namespace WindowsFormsApp5
             for (int i=0; i<abilitySkills.Length; i++)
             {
                 AbilitySkill ab = new AbilitySkill();
-                ab.SetAll(names[i, 0], ((AbilityScore)abilityScores[(int)player.nameToIndex[names[i, 1]]]).GetModifier(), int.Parse(prof_lbl.Text));
+                ab.SetAll(names[i, 0], names[i, 1],((AbilityScore)abilityScores[(int)player.nameToIndex[names[i, 1]]]).GetModifier(), int.Parse(prof_lbl.Text));
                 ab.Location = new Point(5, i * 20);
                 abilitySkills[i] = ab;
                 skills.Controls.Add(ab);
