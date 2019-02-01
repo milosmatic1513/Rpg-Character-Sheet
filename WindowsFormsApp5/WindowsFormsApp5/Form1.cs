@@ -153,6 +153,8 @@ namespace WindowsFormsApp5
                 { "wis" , wis_save_mod },
                 { "cha" , cha_save_mod }
             };
+            saveFileDialog1.Filter = "Character Files|*.dat";
+            openFileDialog1.Filter = "Character Files|*.dat|All files|*.*";
         }
 
         
@@ -319,15 +321,17 @@ namespace WindowsFormsApp5
         {
             if (string.IsNullOrWhiteSpace(name_box.Text))
             {
-                name_box.BackColor = Color.Gray;
+                name_box.BackColor = Color.Pink;
             }
             else
             {
-                Player a = new Player();
-                a = player;
-                FileStream fs = new FileStream(player.name+".dat", FileMode.Create);
-                formater.Serialize(fs, a);
-                fs.Close();
+                saveFileDialog1.ShowDialog();
+                if (saveFileDialog1.FileName != "")
+                {
+                    FileStream fs = new FileStream(saveFileDialog1.FileName, FileMode.Create);
+                    formater.Serialize(fs, player);
+                    fs.Close();
+                }
             }
         }
 
@@ -340,6 +344,11 @@ namespace WindowsFormsApp5
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             player.p_class = comboBox1.SelectedText.ToString();
+        }
+
+        private void load_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
         }
     }
 }

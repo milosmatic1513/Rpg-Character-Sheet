@@ -70,12 +70,14 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.save = new System.Windows.Forms.Button();
             this.load = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.abilityScore6 = new WindowsFormsApp5.AbilityScore();
             this.abilityScore5 = new WindowsFormsApp5.AbilityScore();
             this.abilityScore4 = new WindowsFormsApp5.AbilityScore();
             this.abilityScore3 = new WindowsFormsApp5.AbilityScore();
             this.abilityScore2 = new WindowsFormsApp5.AbilityScore();
             this.abilityScore1 = new WindowsFormsApp5.AbilityScore();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -576,6 +578,11 @@
             this.load.TabIndex = 37;
             this.load.Text = "LOAD";
             this.load.UseVisualStyleBackColor = true;
+            this.load.Click += new System.EventHandler(this.load_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // abilityScore6
             // 
@@ -732,6 +739,8 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.Button load;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 
