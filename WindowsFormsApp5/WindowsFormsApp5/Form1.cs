@@ -20,7 +20,6 @@ namespace WindowsFormsApp5
         Player player;
         AbilityScore[] abilityScores;
         BinaryFormatter formater;
-        bool editOrLvl; //True = edit , False = Lvlup
 
 
         public void hide_all()
@@ -60,13 +59,17 @@ namespace WindowsFormsApp5
             public int level = 1;
             public string p_class;
             public int[] changeOnLvlUp = new int[6];
+            public bool editOrLvl = false; //True = edit , False = Lvlup
 
             public void add_score(int score_addition, string target_stat)
             {
                 AbilityScore curr = (AbilityScore)player_stats[target_stat];
                 curr.SetScore(curr.GetScore() + score_addition);  //Add score
-                changeOnLvlUp[(int)nameToIndex[target_stat]] += score_addition;
-                lvlup -= score_addition;
+                if (!editOrLvl)
+                {
+                    changeOnLvlUp[(int)nameToIndex[target_stat]] += score_addition;
+                    lvlup -= score_addition;
+                }
             }
         }
 
@@ -79,7 +82,6 @@ namespace WindowsFormsApp5
             abilityScores = new AbilityScore[6];
             formater = new BinaryFormatter();
             foreach (int x in player.changeOnLvlUp) { player.changeOnLvlUp[x] = 0; }
-            editOrLvl = false;
         }
 
         public void UpdateGeneral()
@@ -91,40 +93,40 @@ namespace WindowsFormsApp5
             if (wis_save.Checked) saving_check(wis_save); 
             if (chaa_save.Checked) saving_check(chaa_save);
 
-            if (((AbilityScore)player.player_stats["str"]).GetScore() == 20 || player.changeOnLvlUp[0] == 2 || player.lvlup == 0) str_button.Visible = false;
+            if (((AbilityScore)player.player_stats["str"]).GetScore() == 20 || ((player.changeOnLvlUp[0] == 2 || player.lvlup == 0) && !player.editOrLvl)) str_button.Visible = false;
             else str_button.Visible = true;
 
-            if (((AbilityScore)player.player_stats["dex"]).GetScore() == 20 || player.changeOnLvlUp[1] == 2 || player.lvlup == 0) dex_button.Visible = false;
+            if (((AbilityScore)player.player_stats["dex"]).GetScore() == 20 || ((player.changeOnLvlUp[1] == 2 || player.lvlup == 0) && !player.editOrLvl)) dex_button.Visible = false;
             else dex_button.Visible = true;
 
-            if (((AbilityScore)player.player_stats["con"]).GetScore() == 20 || player.changeOnLvlUp[2] == 2 || player.lvlup == 0) cons_button.Visible = false;
+            if (((AbilityScore)player.player_stats["con"]).GetScore() == 20 || ((player.changeOnLvlUp[2] == 2 || player.lvlup == 0) && !player.editOrLvl)) cons_button.Visible = false;
             else cons_button.Visible = true;
 
-            if (((AbilityScore)player.player_stats["int"]).GetScore() == 20 || player.changeOnLvlUp[3] == 2 || player.lvlup == 0) intel_button.Visible = false;
+            if (((AbilityScore)player.player_stats["int"]).GetScore() == 20 || ((player.changeOnLvlUp[3] == 2 || player.lvlup == 0) && !player.editOrLvl)) intel_button.Visible = false;
             else intel_button.Visible = true;
 
-            if (((AbilityScore)player.player_stats["wis"]).GetScore() == 20 || player.changeOnLvlUp[4] == 2 || player.lvlup == 0) wis_button.Visible = false;
+            if (((AbilityScore)player.player_stats["wis"]).GetScore() == 20 || ((player.changeOnLvlUp[4] == 2 || player.lvlup == 0) && !player.editOrLvl)) wis_button.Visible = false;
             else wis_button.Visible = true;
 
-            if (((AbilityScore)player.player_stats["cha"]).GetScore() == 20 || player.changeOnLvlUp[5] == 2 || player.lvlup == 0) cha_button.Visible = false;
+            if (((AbilityScore)player.player_stats["cha"]).GetScore() == 20 || ((player.changeOnLvlUp[5] == 2 || player.lvlup == 0) && !player.editOrLvl)) cha_button.Visible = false;
             else cha_button.Visible = true;
 
-            if (((AbilityScore)player.player_stats["str"]).GetScore() == 1 || player.changeOnLvlUp[0] == 0 || player.lvlup == 2) str_minus.Visible = false;
+            if (((AbilityScore)player.player_stats["str"]).GetScore() == 1 || ((player.changeOnLvlUp[0] == 0 || player.lvlup == 2) && !player.editOrLvl)) str_minus.Visible = false;
             else str_minus.Visible = true;
 
-            if (((AbilityScore)player.player_stats["dex"]).GetScore() == 1 || player.changeOnLvlUp[1] == 0 || player.lvlup == 2) dex_minus.Visible = false;
+            if (((AbilityScore)player.player_stats["dex"]).GetScore() == 1 || ((player.changeOnLvlUp[1] == 0 || player.lvlup == 2) && !player.editOrLvl)) dex_minus.Visible = false;
             else dex_minus.Visible = true; 
 
-            if (((AbilityScore)player.player_stats["con"]).GetScore() == 1 || player.changeOnLvlUp[2] == 0 || player.lvlup == 2) con_minus.Visible = false;
+            if (((AbilityScore)player.player_stats["con"]).GetScore() == 1 || ((player.changeOnLvlUp[2] == 0 || player.lvlup == 2) && !player.editOrLvl)) con_minus.Visible = false;
             else con_minus.Visible = true;
 
-            if (((AbilityScore)player.player_stats["int"]).GetScore() == 1 || player.changeOnLvlUp[3] == 0 || player.lvlup == 2) int_minus.Visible = false;
+            if (((AbilityScore)player.player_stats["int"]).GetScore() == 1 || ((player.changeOnLvlUp[3] == 0 || player.lvlup == 2) && !player.editOrLvl)) int_minus.Visible = false;
             else int_minus.Visible = true;
 
-            if (((AbilityScore)player.player_stats["wis"]).GetScore() == 1 || player.changeOnLvlUp[4] == 0 || player.lvlup == 2) wis_minus.Visible = false;
+            if (((AbilityScore)player.player_stats["wis"]).GetScore() == 1 || ((player.changeOnLvlUp[4] == 0 || player.lvlup == 2) && !player.editOrLvl)) wis_minus.Visible = false;
             else wis_minus.Visible = true;
 
-            if (((AbilityScore)player.player_stats["cha"]).GetScore() == 1 || player.changeOnLvlUp[5] == 0 || player.lvlup == 2) cha_minus.Visible = false;
+            if (((AbilityScore)player.player_stats["cha"]).GetScore() == 1 || ((player.changeOnLvlUp[5] == 0 || player.lvlup == 2) && !player.editOrLvl)) cha_minus.Visible = false;
             else cha_minus.Visible = true;
 
             level.Text = player.level.ToString();
@@ -173,7 +175,7 @@ namespace WindowsFormsApp5
         private void lvl_up(object sender, EventArgs e)
         {
             player.lvlup = 2;
-            editOrLvl = false;
+            player.editOrLvl = false;
             button3.Enabled = false;
             if(player.level<=20) player.level += 1;
             str_button.Visible = true;
@@ -204,6 +206,7 @@ namespace WindowsFormsApp5
             done.Visible = false;
             button1.Enabled = true;
             button3.Enabled = true;
+            foreach (int x in player.changeOnLvlUp) { player.changeOnLvlUp[x] = 0; }
         }
 
       
@@ -286,7 +289,7 @@ namespace WindowsFormsApp5
         private void button3_Click(object sender, EventArgs e)
         {
             UpdateGeneral();
-            editOrLvl = true;
+            player.editOrLvl = true;
             str_button.Visible = true;
             dex_button.Visible = true;
             cons_button.Visible = true;
