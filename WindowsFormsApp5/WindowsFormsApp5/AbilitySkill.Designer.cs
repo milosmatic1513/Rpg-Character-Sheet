@@ -84,7 +84,7 @@
             this.Controls.Add(this.mod);
             this.Controls.Add(this.skill);
             this.Name = "AbilitySkill";
-            this.Size = new System.Drawing.Size(208, 18);
+            this.Size = new System.Drawing.Size(215, 18);
             this.Load += new System.EventHandler(this.AbilitySkill_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
