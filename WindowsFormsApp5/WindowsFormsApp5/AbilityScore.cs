@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp5
 {
+    
     public partial class AbilityScore : UserControl
     {
         public AbilityScore()
