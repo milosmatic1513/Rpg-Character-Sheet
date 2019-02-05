@@ -20,8 +20,9 @@ namespace WindowsFormsApp5
         Player player;
         AbilityScore[] abilityScores;
         BinaryFormatter formater;
-        AbilitySkill[] abilitySkills;
-        string[,] names;
+        AbilitySkill[] abilitySkills, toolProficiencies, armorEquipment;
+        string[,] abChecks;
+        int selected;
         
         private void hide_all()
         {
@@ -41,52 +42,151 @@ namespace WindowsFormsApp5
 
         private void addAbilityChecks()
         {
-            names = new string[18,2];
-            names[0,0] = "Acrobatics";
-            names[1,0] = "Animal Handling";
-            names[2,0] = "Arcana";
-            names[3,0] = "Athletics";
-            names[4,0] = "Deception";
-            names[5,0] = "History";
-            names[6,0] = "Insight";
-            names[7,0] = "Intimidation";
-            names[8,0] = "Investigation";
-            names[9,0] = "Medicine";
-            names[10,0] = "Nature";
-            names[11,0] = "Perception";
-            names[12,0] = "Performance";
-            names[13,0] = "Persuasion";
-            names[14,0] = "Religion";
-            names[15,0] = "Sleight of Hand";
-            names[16,0] = "Stealth";
-            names[17,0] = "Survival";
+            abChecks = new string[18,2];
+            abChecks[0,0] = "Acrobatics";
+            abChecks[1,0] = "Animal Handling";
+            abChecks[2,0] = "Arcana";
+            abChecks[3,0] = "Athletics";
+            abChecks[4,0] = "Deception";
+            abChecks[5,0] = "History";
+            abChecks[6,0] = "Insight";
+            abChecks[7,0] = "Intimidation";
+            abChecks[8,0] = "Investigation";
+            abChecks[9,0] = "Medicine";
+            abChecks[10,0] = "Nature";
+            abChecks[11,0] = "Perception";
+            abChecks[12,0] = "Performance";
+            abChecks[13,0] = "Persuasion";
+            abChecks[14,0] = "Religion";
+            abChecks[15,0] = "Sleight of Hand";
+            abChecks[16,0] = "Stealth";
+            abChecks[17,0] = "Survival";
 
-            names[0, 1] = "dex";
-            names[1, 1] = "wis";
-            names[2, 1] = "int";
-            names[3, 1] = "str";
-            names[4, 1] = "cha";
-            names[5, 1] = "int";
-            names[6, 1] = "wis";
-            names[7, 1] = "cha";
-            names[8, 1] = "int";
-            names[9, 1] = "wis";
-            names[10, 1] = "int";
-            names[11, 1] = "wis";
-            names[12, 1] = "cha";
-            names[13, 1] = "cha";
-            names[14, 1] = "int";
-            names[15, 1] = "dex";
-            names[16, 1] = "dex";
-            names[17, 1] = "wis";
+            abChecks[0, 1] = "dex";
+            abChecks[1, 1] = "wis";
+            abChecks[2, 1] = "int";
+            abChecks[3, 1] = "str";
+            abChecks[4, 1] = "cha";
+            abChecks[5, 1] = "int";
+            abChecks[6, 1] = "wis";
+            abChecks[7, 1] = "cha";
+            abChecks[8, 1] = "int";
+            abChecks[9, 1] = "wis";
+            abChecks[10, 1] = "int";
+            abChecks[11, 1] = "wis";
+            abChecks[12, 1] = "cha";
+            abChecks[13, 1] = "cha";
+            abChecks[14, 1] = "int";
+            abChecks[15, 1] = "dex";
+            abChecks[16, 1] = "dex";
+            abChecks[17, 1] = "wis";
 
-            for (int i=0; i<abilitySkills.Length; i++)
+            for (int i = 0; i < abilitySkills.Length; i++)
             {
                 AbilitySkill ab = new AbilitySkill();
-                ab.SetAll(names[i, 0], names[i, 1],((AbilityScore)abilityScores[(int)player.nameToIndex[names[i, 1]]]).GetModifier(), int.Parse(prof_lbl.Text));
+                ab.SetAll_Skills(abChecks[i, 0], abChecks[i, 1],((AbilityScore)abilityScores[(int)player.nameToIndex[abChecks[i, 1]]]).GetModifier(), int.Parse(prof_lbl.Text));
                 ab.Location = new Point(5, i * 20);
                 abilitySkills[i] = ab;
                 skills.Controls.Add(ab);
+            }
+        }
+
+        private void addTools()
+        {
+            string[] tools = new string[6];
+            tools[0] = "Disguise Kit";
+            tools[1] = "Forgery Kit";
+            tools[2] = "Herbalism Kit";
+            tools[3] = "Navigator's Tools";
+            tools[4] = "Poisoner's Kit";
+            tools[5] = "Thieves' Tools";
+
+            for (int i = 0; i < toolProficiencies.Length; i++)
+            {
+                AbilitySkill ab = new AbilitySkill();
+                ab.SetAll_Tools(tools[i], int.Parse(prof_lbl.Text));
+                ab.Location = new Point(5, i * 20);
+                toolProficiencies[i] = ab;
+                toolsPanel.Controls.Add(ab);
+            }
+        }
+
+        private void addArmors()
+        {
+            string[] armorName = new string[12];
+            int[,] armor = new int[12, 4];
+            armorName[0] = "Padded";  //Name
+            armorName[1] = "Leather";
+            armorName[2] = "Studded leather";
+            armorName[3] = "Hide";
+            armorName[4] = "Chain shirt";
+            armorName[5] = "Scale mail";
+            armorName[6] = "Breastplate";
+            armorName[7] = "Half plate";
+            armorName[8] = "Ring mail";
+            armorName[9] = "Chain mail";
+            armorName[10] = "Splint";
+            armorName[11] = "Plate";
+
+            armor[0, 0] = 0;  //Strength Requirement
+            armor[1, 0] = 0;
+            armor[2, 0] = 0;
+            armor[3, 0] = 0;
+            armor[4, 0] = 0;
+            armor[5, 0] = 0;
+            armor[6, 0] = 0;
+            armor[7, 0] = 0;
+            armor[8, 0] = 0;
+            armor[9, 0] = 13;
+            armor[10, 0] = 15;
+            armor[11, 0] = 15;
+
+            armor[0, 1] = -1;  //+Dex maximum
+            armor[1, 1] = -1;
+            armor[2, 1] = -1;
+            armor[3, 1] = 2;
+            armor[4, 1] = 2;
+            armor[5, 1] = 2;
+            armor[6, 1] = 2;
+            armor[7, 1] = 2;
+            armor[8, 1] = 0;
+            armor[9, 1] = 0;
+            armor[10, 1] = 0;
+            armor[11, 1] = 0;
+
+            armor[0, 2] = 11;  //Basic AC
+            armor[1, 2] = 11;
+            armor[2, 2] = 12;
+            armor[3, 2] = 12;
+            armor[4, 2] = 13;
+            armor[5, 2] = 14;
+            armor[6, 2] = 14;
+            armor[7, 2] = 15;
+            armor[8, 2] = 14;
+            armor[9, 2] = 16;
+            armor[10, 2] = 17;
+            armor[11, 2] = 18;
+
+            armor[0, 3] = 1;  //Disadvantage
+            armor[1, 3] = 0;
+            armor[2, 3] = 0;
+            armor[3, 3] = 0;
+            armor[4, 3] = 0;
+            armor[5, 3] = 1;
+            armor[6, 3] = 0;
+            armor[7, 3] = 1;
+            armor[8, 3] = 1;
+            armor[9, 3] = 1;
+            armor[10, 3] = 1;
+            armor[11, 3] = 1;
+
+            for (int i = 0; i < armorEquipment.Length; i++)
+            {
+                AbilitySkill ab = new AbilitySkill();
+                ab.SetAll_Armor(armorName[i], armor[i,3], armor[i,1], ((AbilityScore)player.player_stats["dex"]).GetModifier(), armor[i, 0], armor[i, 2], ((AbilityScore)player.player_stats["str"]).GetScore());
+                ab.Location = new Point(5, i * 20);
+                armorEquipment[i] = ab;
+                armorPanel.Controls.Add(ab);
             }
         }
 
@@ -133,7 +233,10 @@ namespace WindowsFormsApp5
             abilityScores = new AbilityScore[6];
             formater = new BinaryFormatter();
             abilitySkills = new AbilitySkill[18];
+            toolProficiencies = new AbilitySkill[6];
+            armorEquipment = new AbilitySkill[12];
             foreach (int x in player.changeOnLvlUp) { player.changeOnLvlUp[x] = 0; }
+            selected = -1;
         }
 
         public void UpdateGeneral()
@@ -145,9 +248,19 @@ namespace WindowsFormsApp5
             if (wis_save.Checked) saving_check(wis_save); 
             if (chaa_save.Checked) saving_check(chaa_save);
 
-            for (int i = 0; i < 18; i++)
+            for (int i = 0; i < abilitySkills.Length; i++)
             {
-                abilitySkills[i].UpdateMod(((AbilityScore)abilityScores[(int)player.nameToIndex[names[i, 1]]]).GetModifier(), int.Parse(prof_lbl.Text));
+                abilitySkills[i].UpdateMod(((AbilityScore)abilityScores[(int)player.nameToIndex[abChecks[i, 1]]]).GetModifier(), int.Parse(prof_lbl.Text));
+            }
+
+            for (int i = 0; i < toolProficiencies.Length; i++)
+            {
+                toolProficiencies[i].UpdateMod(0, int.Parse(prof_lbl.Text));
+            }
+
+            for (int i = 0; i < armorEquipment.Length; i++)
+            {
+                armorEquipment[i].UpdateMod(((AbilityScore)player.player_stats["dex"]).GetModifier(), ((AbilityScore)player.player_stats["str"]).GetScore());
             }
 
             if (((AbilityScore)player.player_stats["str"]).GetScore() == 20 || ((player.changeOnLvlUp[0] == 2 || player.lvlup == 0) && !player.editOrLvl)) str_button.Visible = false;
@@ -214,6 +327,8 @@ namespace WindowsFormsApp5
             openFileDialog1.Filter = "Character Files|*.dat|All files|*.*";
 
             addAbilityChecks();
+            addTools();
+            addArmors();
         }
 
         
@@ -401,6 +516,29 @@ namespace WindowsFormsApp5
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             player.p_class = comboBox1.SelectedText.ToString();
+        }
+
+        private void checkAC_Tick(object sender, EventArgs e)
+        {
+            ac.Text = (10 + ((AbilityScore)player.player_stats["dex"]).GetModifier()).ToString();
+            for (int i = 0; i < armorEquipment.Length; i++)
+            {
+                if (armorEquipment[i].Checked())
+                {
+                    ac.Text = armorEquipment[i].ac.ToString();
+                    if (selected == -1)
+                    {
+                        selected = i;
+                        break;
+                    }
+                    else if (selected != i)
+                    {
+                        armorEquipment[selected].ChangeState(false);
+                        selected = i;
+                        break;
+                    }
+                }
+            }
         }
 
         private void load_Click(object sender, EventArgs e)

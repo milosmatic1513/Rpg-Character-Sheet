@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.str_button = new System.Windows.Forms.Button();
             this.dex_button = new System.Windows.Forms.Button();
@@ -38,8 +39,7 @@
             this.done = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.prof_lbl = new System.Windows.Forms.Label();
-            this.ac_button = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.ac = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.wis_save = new System.Windows.Forms.CheckBox();
@@ -73,6 +73,9 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.skills = new System.Windows.Forms.FlowLayoutPanel();
+            this.toolsPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.armorPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.checkAC = new System.Windows.Forms.Timer(this.components);
             this.abilityScore6 = new WindowsFormsApp5.AbilityScore();
             this.abilityScore5 = new WindowsFormsApp5.AbilityScore();
             this.abilityScore4 = new WindowsFormsApp5.AbilityScore();
@@ -185,7 +188,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MS Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(202, 97);
+            this.label2.Location = new System.Drawing.Point(202, 127);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(163, 19);
             this.label2.TabIndex = 8;
@@ -195,38 +198,27 @@
             // 
             this.prof_lbl.AutoSize = true;
             this.prof_lbl.Font = new System.Drawing.Font("MS Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prof_lbl.Location = new System.Drawing.Point(362, 97);
+            this.prof_lbl.Location = new System.Drawing.Point(362, 127);
             this.prof_lbl.Name = "prof_lbl";
             this.prof_lbl.Size = new System.Drawing.Size(20, 19);
             this.prof_lbl.TabIndex = 9;
             this.prof_lbl.Text = "2";
             // 
-            // ac_button
+            // ac
             // 
-            this.ac_button.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ac_button.Location = new System.Drawing.Point(215, 176);
-            this.ac_button.Name = "ac_button";
-            this.ac_button.Size = new System.Drawing.Size(49, 28);
-            this.ac_button.TabIndex = 13;
-            this.ac_button.Text = "+";
-            this.ac_button.UseVisualStyleBackColor = true;
-            this.ac_button.Visible = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("MS Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(247, 154);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(20, 19);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "0";
+            this.ac.AutoSize = true;
+            this.ac.Font = new System.Drawing.Font("MS Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ac.Location = new System.Drawing.Point(247, 184);
+            this.ac.Name = "ac";
+            this.ac.Size = new System.Drawing.Size(31, 19);
+            this.ac.TabIndex = 12;
+            this.ac.Text = "10";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("MS Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(211, 154);
+            this.label6.Location = new System.Drawing.Point(211, 184);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 19);
             this.label6.TabIndex = 11;
@@ -246,7 +238,7 @@
             this.groupBox7.Controls.Add(this.con_save_mod);
             this.groupBox7.Controls.Add(this.dex_save_mod);
             this.groupBox7.Controls.Add(this.str_save_mod);
-            this.groupBox7.Location = new System.Drawing.Point(304, 130);
+            this.groupBox7.Location = new System.Drawing.Point(304, 160);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(167, 154);
             this.groupBox7.TabIndex = 15;
@@ -394,7 +386,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(418, 97);
+            this.label1.Location = new System.Drawing.Point(418, 127);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 19);
             this.label1.TabIndex = 22;
@@ -404,7 +396,7 @@
             // 
             this.level.AutoSize = true;
             this.level.Font = new System.Drawing.Font("MS Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.level.Location = new System.Drawing.Point(493, 97);
+            this.level.Location = new System.Drawing.Point(493, 127);
             this.level.Name = "level";
             this.level.Size = new System.Drawing.Size(20, 19);
             this.level.TabIndex = 23;
@@ -513,7 +505,7 @@
             // 
             this.name.AutoSize = true;
             this.name.Font = new System.Drawing.Font("MS PGothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name.Location = new System.Drawing.Point(202, 22);
+            this.name.Location = new System.Drawing.Point(202, 52);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(74, 19);
             this.name.TabIndex = 32;
@@ -522,7 +514,7 @@
             // name_box
             // 
             this.name_box.Font = new System.Drawing.Font("MS Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name_box.Location = new System.Drawing.Point(282, 19);
+            this.name_box.Location = new System.Drawing.Point(282, 49);
             this.name_box.Name = "name_box";
             this.name_box.Size = new System.Drawing.Size(211, 26);
             this.name_box.TabIndex = 33;
@@ -532,7 +524,7 @@
             // 
             this.player_class.AutoSize = true;
             this.player_class.Font = new System.Drawing.Font("MS Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.player_class.Location = new System.Drawing.Point(201, 53);
+            this.player_class.Location = new System.Drawing.Point(201, 83);
             this.player_class.Name = "player_class";
             this.player_class.Size = new System.Drawing.Size(75, 19);
             this.player_class.TabIndex = 34;
@@ -555,7 +547,7 @@
             "Sorcerer",
             "Warlock",
             "Wizard"});
-            this.comboBox1.Location = new System.Drawing.Point(282, 50);
+            this.comboBox1.Location = new System.Drawing.Point(282, 80);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(211, 27);
             this.comboBox1.TabIndex = 35;
@@ -563,7 +555,7 @@
             // 
             // save
             // 
-            this.save.Location = new System.Drawing.Point(357, 568);
+            this.save.Location = new System.Drawing.Point(261, 13);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(75, 23);
             this.save.TabIndex = 36;
@@ -573,7 +565,7 @@
             // 
             // load
             // 
-            this.load.Location = new System.Drawing.Point(438, 568);
+            this.load.Location = new System.Drawing.Point(342, 13);
             this.load.Name = "load";
             this.load.Size = new System.Drawing.Size(75, 23);
             this.load.TabIndex = 37;
@@ -589,10 +581,33 @@
             // 
             this.skills.AutoScroll = true;
             this.skills.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.skills.Location = new System.Drawing.Point(215, 294);
+            this.skills.Location = new System.Drawing.Point(215, 322);
             this.skills.Name = "skills";
-            this.skills.Size = new System.Drawing.Size(241, 259);
+            this.skills.Size = new System.Drawing.Size(256, 258);
             this.skills.TabIndex = 38;
+            // 
+            // toolsPanel
+            // 
+            this.toolsPanel.AutoScroll = true;
+            this.toolsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolsPanel.Location = new System.Drawing.Point(23, 599);
+            this.toolsPanel.Name = "toolsPanel";
+            this.toolsPanel.Size = new System.Drawing.Size(241, 150);
+            this.toolsPanel.TabIndex = 39;
+            // 
+            // armorPanel
+            // 
+            this.armorPanel.AutoScroll = true;
+            this.armorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.armorPanel.Location = new System.Drawing.Point(298, 599);
+            this.armorPanel.Name = "armorPanel";
+            this.armorPanel.Size = new System.Drawing.Size(173, 150);
+            this.armorPanel.TabIndex = 40;
+            // 
+            // checkAC
+            // 
+            this.checkAC.Enabled = true;
+            this.checkAC.Tick += new System.EventHandler(this.checkAC_Tick);
             // 
             // abilityScore6
             // 
@@ -652,8 +667,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(525, 603);
+            this.ClientSize = new System.Drawing.Size(522, 831);
+            this.Controls.Add(this.armorPanel);
             this.Controls.Add(this.skills);
+            this.Controls.Add(this.toolsPanel);
             this.Controls.Add(this.load);
             this.Controls.Add(this.save);
             this.Controls.Add(this.comboBox1);
@@ -677,8 +694,7 @@
             this.Controls.Add(this.abilityScore2);
             this.Controls.Add(this.abilityScore1);
             this.Controls.Add(this.groupBox7);
-            this.Controls.Add(this.ac_button);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.ac);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.prof_lbl);
             this.Controls.Add(this.label2);
@@ -712,8 +728,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label prof_lbl;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button ac_button;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label ac;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label cha_save_mod;
@@ -753,6 +768,9 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.FlowLayoutPanel skills;
+        private System.Windows.Forms.FlowLayoutPanel toolsPanel;
+        private System.Windows.Forms.FlowLayoutPanel armorPanel;
+        private System.Windows.Forms.Timer checkAC;
     }
 }
 
