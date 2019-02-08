@@ -45,6 +45,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbilityScore.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AbilityScore.Designer.cs">
+      <DependentUpon>AbilityScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbilitySkill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AbilitySkill.Designer.cs">
+      <DependentUpon>AbilitySkill.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -53,6 +65,31 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="spell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="spell.Designer.cs">
+      <DependentUpon>spell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Spells.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Spells.Designer.cs">
+      <DependentUpon>Spells.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Spell_class.cs" />
+    <Compile Include="Spell_creation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Spell_creation.Designer.cs">
+      <DependentUpon>Spell_creation.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AbilityScore.resx">
+      <DependentUpon>AbilityScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbilitySkill.resx">
+      <DependentUpon>AbilitySkill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -65,6 +102,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="spell.resx">
+      <DependentUpon>spell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Spells.resx">
+      <DependentUpon>Spells.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Spell_creation.resx">
+      <DependentUpon>Spell_creation.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
