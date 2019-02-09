@@ -191,6 +191,11 @@ namespace WindowsFormsApp5
             return player.spells;
         }
 
+        public void deleteSpell(int index)
+        {
+            player.spells.RemoveAt(index);
+        }
+
         [Serializable]
         private class Player
         {

@@ -16,21 +16,30 @@ namespace WindowsFormsApp5
         int last_y;
         Spell_creation sp;
         cha_save parentForm;
+
         public Spells()
         {
             InitializeComponent();
         }
-        private void Update()
+
+        public void Update()
         {
             flowLayoutPanel1.Controls.Clear();
             last_y = 0;
+            int index = 0;
             foreach (Spell_class sp in parentForm.getSpells() )
             {
-                spell ab = new spell(sp.name, sp.casting_time, sp.components, sp.duration, sp.description,sp.range);
+                spell ab = new spell(sp.name, sp.casting_time, sp.components, sp.duration, sp.description,sp.range,index);
                 ab.Location = new Point(5, last_y);
                 last_y += 15;
                 flowLayoutPanel1.Controls.Add(ab);
+                index++;
             }
+        }
+
+        public cha_save getParent()
+        {
+            return parentForm;
         }
 
         private void Spells_Load(object sender, EventArgs e)

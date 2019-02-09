@@ -16,10 +16,18 @@ namespace WindowsFormsApp5
         string name,time,comps, duration, desc,range;
         Spell_creation sp_create;
         Spells parentForm;
+        ToolTip t_name, t_castTime, t_comps, t_dur, t_ran;
+        int positionInList;
 
         private void remove_Click(object sender, EventArgs e)
         {
+            ((cha_save)parentForm.getParent()).deleteSpell(positionInList);
+            parentForm.Update();
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(desc,"Description");
         }
 
         private void edit_Click(object sender, EventArgs e)
@@ -35,14 +43,7 @@ namespace WindowsFormsApp5
             update();
         }
 
-        private void spell_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip tt = new ToolTip();
-            tt.SetToolTip(this, desc);
-
-        }
-
-        public spell(string name_temp,string time_temp,string comps_temp, string duration_temp,string desc_temp, string range_temp)
+        public spell(string name_temp,string time_temp,string comps_temp, string duration_temp,string desc_temp, string range_temp, int i)
         {
             InitializeComponent();
             name = name_temp;
@@ -51,6 +52,7 @@ namespace WindowsFormsApp5
             duration = duration_temp;
             desc = desc_temp;
             range = range_temp;
+            positionInList = i;
         }
         private void update()
         {
@@ -59,8 +61,6 @@ namespace WindowsFormsApp5
             s_comps.Text = comps;
             s_dur.Text = duration;
             rng.Text = range;
-            ToolTip tt = new ToolTip();
-            tt.SetToolTip(this, desc);
         }
 
 
@@ -72,6 +72,17 @@ namespace WindowsFormsApp5
             s_dur.Text = duration;
             rng.Text = range;
             parentForm =(Spells) this.FindForm();
+
+            t_name = new ToolTip();
+            t_castTime = new ToolTip();
+            t_comps = new ToolTip();
+            t_dur = new ToolTip();
+            t_ran = new ToolTip();
+            t_name.SetToolTip(s_name, name);
+            t_castTime.SetToolTip(c_time, time);
+            t_comps.SetToolTip(s_comps, comps);
+            t_dur.SetToolTip(s_dur, duration);
+            t_ran.SetToolTip(rng, range);
         }
     }
 }

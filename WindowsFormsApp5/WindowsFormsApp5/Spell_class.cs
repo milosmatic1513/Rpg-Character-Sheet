@@ -20,8 +20,5 @@ namespace WindowsFormsApp5
             description = desc_temp;
             range = range_temp;
         }
-
-
-
     }
 }
