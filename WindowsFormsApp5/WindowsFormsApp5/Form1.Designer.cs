@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.done = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.prof_lbl = new System.Windows.Forms.Label();
             this.ac = new System.Windows.Forms.Label();
@@ -65,6 +64,11 @@
             this.spells = new System.Windows.Forms.Button();
             this.ac_plus = new System.Windows.Forms.Button();
             this.ac_minus = new System.Windows.Forms.Button();
+            this.cha = new WindowsFormsApp5.Plus_Minus_Stat();
+            this.wis = new WindowsFormsApp5.Plus_Minus_Stat();
+            this.inte = new WindowsFormsApp5.Plus_Minus_Stat();
+            this.con = new WindowsFormsApp5.Plus_Minus_Stat();
+            this.dex = new WindowsFormsApp5.Plus_Minus_Stat();
             this.str = new WindowsFormsApp5.Plus_Minus_Stat();
             this.abilityScore6 = new WindowsFormsApp5.AbilityScore();
             this.abilityScore5 = new WindowsFormsApp5.AbilityScore();
@@ -72,11 +76,6 @@
             this.abilityScore3 = new WindowsFormsApp5.AbilityScore();
             this.abilityScore2 = new WindowsFormsApp5.AbilityScore();
             this.abilityScore1 = new WindowsFormsApp5.AbilityScore();
-            this.dex = new WindowsFormsApp5.Plus_Minus_Stat();
-            this.con = new WindowsFormsApp5.Plus_Minus_Stat();
-            this.inte = new WindowsFormsApp5.Plus_Minus_Stat();
-            this.wis = new WindowsFormsApp5.Plus_Minus_Stat();
-            this.cha = new WindowsFormsApp5.Plus_Minus_Stat();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -90,17 +89,6 @@
             this.button1.Text = "LEVEL UP";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.lvl_up);
-            // 
-            // done
-            // 
-            this.done.Location = new System.Drawing.Point(12, 531);
-            this.done.Name = "done";
-            this.done.Size = new System.Drawing.Size(75, 23);
-            this.done.TabIndex = 7;
-            this.done.Text = "READY";
-            this.done.UseVisualStyleBackColor = true;
-            this.done.Visible = false;
-            this.done.Click += new System.EventHandler(this.done_Click);
             // 
             // label2
             // 
@@ -496,6 +484,46 @@
             this.ac_minus.Visible = false;
             this.ac_minus.Click += new System.EventHandler(this.plus_minus_stat);
             // 
+            // cha
+            // 
+            this.cha.BackColor = System.Drawing.SystemColors.Control;
+            this.cha.Location = new System.Drawing.Point(121, 452);
+            this.cha.Name = "cha";
+            this.cha.Size = new System.Drawing.Size(35, 64);
+            this.cha.TabIndex = 50;
+            // 
+            // wis
+            // 
+            this.wis.BackColor = System.Drawing.SystemColors.Control;
+            this.wis.Location = new System.Drawing.Point(121, 372);
+            this.wis.Name = "wis";
+            this.wis.Size = new System.Drawing.Size(35, 64);
+            this.wis.TabIndex = 49;
+            // 
+            // inte
+            // 
+            this.inte.BackColor = System.Drawing.SystemColors.Control;
+            this.inte.Location = new System.Drawing.Point(121, 292);
+            this.inte.Name = "inte";
+            this.inte.Size = new System.Drawing.Size(35, 64);
+            this.inte.TabIndex = 48;
+            // 
+            // con
+            // 
+            this.con.BackColor = System.Drawing.SystemColors.Control;
+            this.con.Location = new System.Drawing.Point(121, 212);
+            this.con.Name = "con";
+            this.con.Size = new System.Drawing.Size(35, 64);
+            this.con.TabIndex = 47;
+            // 
+            // dex
+            // 
+            this.dex.BackColor = System.Drawing.SystemColors.Control;
+            this.dex.Location = new System.Drawing.Point(121, 132);
+            this.dex.Name = "dex";
+            this.dex.Size = new System.Drawing.Size(35, 64);
+            this.dex.TabIndex = 46;
+            // 
             // str
             // 
             this.str.BackColor = System.Drawing.SystemColors.Control;
@@ -564,46 +592,6 @@
             this.abilityScore1.TabIndex = 16;
             this.abilityScore1.Load += new System.EventHandler(this.abilityScore1_Load);
             // 
-            // dex
-            // 
-            this.dex.BackColor = System.Drawing.SystemColors.Control;
-            this.dex.Location = new System.Drawing.Point(121, 132);
-            this.dex.Name = "dex";
-            this.dex.Size = new System.Drawing.Size(35, 64);
-            this.dex.TabIndex = 46;
-            // 
-            // con
-            // 
-            this.con.BackColor = System.Drawing.SystemColors.Control;
-            this.con.Location = new System.Drawing.Point(121, 212);
-            this.con.Name = "con";
-            this.con.Size = new System.Drawing.Size(35, 64);
-            this.con.TabIndex = 47;
-            // 
-            // inte
-            // 
-            this.inte.BackColor = System.Drawing.SystemColors.Control;
-            this.inte.Location = new System.Drawing.Point(121, 292);
-            this.inte.Name = "inte";
-            this.inte.Size = new System.Drawing.Size(35, 64);
-            this.inte.TabIndex = 48;
-            // 
-            // wis
-            // 
-            this.wis.BackColor = System.Drawing.SystemColors.Control;
-            this.wis.Location = new System.Drawing.Point(121, 372);
-            this.wis.Name = "wis";
-            this.wis.Size = new System.Drawing.Size(35, 64);
-            this.wis.TabIndex = 49;
-            // 
-            // cha
-            // 
-            this.cha.BackColor = System.Drawing.SystemColors.Control;
-            this.cha.Location = new System.Drawing.Point(121, 452);
-            this.cha.Name = "cha";
-            this.cha.Size = new System.Drawing.Size(35, 64);
-            this.cha.TabIndex = 50;
-            // 
             // cha_save
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -642,7 +630,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.prof_lbl);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.done);
             this.Controls.Add(this.button1);
             this.DoubleBuffered = true;
             this.Name = "cha_save";
@@ -658,7 +645,6 @@
 
         #endregion
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button done;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label prof_lbl;
         private System.Windows.Forms.Button button2;

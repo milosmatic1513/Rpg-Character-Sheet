@@ -373,6 +373,12 @@ namespace WindowsFormsApp5
             wis.Set_Parent(this);
             cha.Set_Stats("cha");
             cha.Set_Parent(this);
+            str.Visible = false;
+            dex.Visible = false;
+            con.Visible = false;
+            inte.Visible = false;
+            wis.Visible = false;
+            cha.Visible = false;
         }
  
         private void plus_minus_stat(object sender, EventArgs e)
@@ -396,7 +402,7 @@ namespace WindowsFormsApp5
             player.editOrLvl = false;
             button3.Enabled = false;
             if(player.level<=20) player.level += 1;
-            done.Visible = true;
+            done_Click(sender, e);
             UpdateGeneral();
         }
 
@@ -408,7 +414,6 @@ namespace WindowsFormsApp5
             player.prof = int.Parse(prof_lbl.Text);
             UpdateGeneral();
             hide_all();
-            done.Visible = false;
             button1.Enabled = true;
             if (level.Text == "20") button1.Enabled = false;
             button3.Enabled = true;
@@ -505,6 +510,13 @@ namespace WindowsFormsApp5
             button1.Enabled = false;
             ac_minus.Visible = true;
             ac_plus.Visible = true;
+
+            str.Visible = true;
+            dex.Visible = true;
+            con.Visible = true;
+            inte.Visible = true;
+            wis.Visible = true;
+            cha.Visible = true;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -515,6 +527,13 @@ namespace WindowsFormsApp5
             button4.Visible = false;
             button1.Enabled = true;
             if (level.Text == "20") button1.Enabled = false;
+
+            str.Visible = false;
+            dex.Visible = false;
+            con.Visible = false;
+            inte.Visible = false;
+            wis.Visible = false;
+            cha.Visible = false;
         }
 
         private void save_Click(object sender, EventArgs e)
