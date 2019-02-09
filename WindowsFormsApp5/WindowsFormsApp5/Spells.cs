@@ -32,12 +32,6 @@ namespace WindowsFormsApp5
                 flowLayoutPanel1.Controls.Add(ab);
             }
         }
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-            
-
-        }
 
         private void Spells_Load(object sender, EventArgs e)
         {
@@ -52,8 +46,11 @@ namespace WindowsFormsApp5
         {
             sp = new Spell_creation();
             sp.ShowDialog();
-            parentForm.addSpell(new Spell_class(sp.spell_name,sp.casting_time,sp.comps,sp.duration,sp.desc,sp.range));
-            Update();
+            if (sp.c1 && sp.c2 && sp.c3 && sp.c4 && sp.c5)
+            {
+                parentForm.addSpell(new Spell_class(sp.spell_name, sp.casting_time, sp.comps, sp.duration, sp.desc, sp.range));
+                Update();
+            }
         }
     }
 }

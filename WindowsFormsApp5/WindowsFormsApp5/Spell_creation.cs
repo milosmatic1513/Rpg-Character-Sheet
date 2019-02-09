@@ -15,6 +15,27 @@ namespace WindowsFormsApp5
     public partial class Spell_creation : Form
     {
         public string spell_name, casting_time, duration,comps,desc,range;
+        public bool c1, c2, c3, c4, c5;
+
+        private void range_box_TextChanged(object sender, EventArgs e)
+        {
+            if (range_box.Text != null) c5 = true;
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox4.Text != null) c4 = true;
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox2.Text != null) c2 = true;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text != null) c1 = true;
+        }
 
         private void Spell_creation_Load(object sender, EventArgs e)
         {
@@ -41,10 +62,16 @@ namespace WindowsFormsApp5
             comps = comps1;
             desc = desc1;
             range = range1;
+
+            c1 = false;
+            c2 = false;
+            c3 = false;
+            c4 = false;
+            c5 = false;
         }
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-
+            if (textBox3.Text != null) c3 = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
