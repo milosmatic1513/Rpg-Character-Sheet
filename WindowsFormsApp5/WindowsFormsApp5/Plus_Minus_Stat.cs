@@ -18,20 +18,25 @@ namespace WindowsFormsApp5
         public Plus_Minus_Stat()
         {
             InitializeComponent();
-            parentForm = new cha_save();
+            parentForm = null;
+            stat_name = null;
         }
 
-        public void Set_Stats(cha_save parent, string name)
+        public void Set_Stats(string name)
         {
-            parentForm = parent;
             stat_name = name;
         }
-
+        
+        public void Set_Parent(cha_save par)
+        {
+            parentForm = par;
+        }
+        
         private void button1_Click(object sender, EventArgs e)
         {
             button2.Enabled = true;
             int tmp = parentForm.GetStatScore(stat_name);
-            parentForm.SetStatScore(stat_name, tmp++);
+            parentForm.SetStatScore(stat_name, ++tmp);
             if (tmp == 24)
             {
                 button1.Enabled = false;
@@ -42,7 +47,7 @@ namespace WindowsFormsApp5
         {
             button1.Enabled = true;
             int tmp = parentForm.GetStatScore(stat_name);
-            parentForm.SetStatScore(stat_name, tmp--);
+            parentForm.SetStatScore(stat_name, --tmp);
             if (tmp == 1)
             {
                 button2.Enabled = false;

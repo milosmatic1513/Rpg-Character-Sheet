@@ -11,7 +11,7 @@ using System.Collections;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization;
 using System.IO;
-using System.Collections;
+
 namespace WindowsFormsApp5
 {
 
@@ -56,6 +56,7 @@ namespace WindowsFormsApp5
         public void SetStatScore(string target, int stat)
         {
             player.player_stats[target] = stat;
+            UpdateGeneral();
         }
 
         private void hide_all()
@@ -293,6 +294,7 @@ namespace WindowsFormsApp5
             {   
                 ab_sc.SetScore((int)player.player_stats[ab_sc.Tag.ToString()]);
             }
+
             prof_lbl.Text=player.prof.ToString();
             level.Text = player.level.ToString();
             name_box.Text = player.name.ToString();
@@ -358,6 +360,19 @@ namespace WindowsFormsApp5
             pic_open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
             addAbilityChecks();
             addTools();
+            
+            str.Set_Stats("str");
+            str.Set_Parent(this);
+            dex.Set_Stats("dex");
+            dex.Set_Parent(this);
+            con.Set_Stats("con");
+            con.Set_Parent(this);
+            inte.Set_Stats("int");
+            inte.Set_Parent(this);
+            wis.Set_Stats("wis");
+            wis.Set_Parent(this);
+            cha.Set_Stats("cha");
+            cha.Set_Parent(this);
         }
  
         private void plus_minus_stat(object sender, EventArgs e)

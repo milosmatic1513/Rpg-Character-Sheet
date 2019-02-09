@@ -65,12 +65,18 @@
             this.spells = new System.Windows.Forms.Button();
             this.ac_plus = new System.Windows.Forms.Button();
             this.ac_minus = new System.Windows.Forms.Button();
+            this.str = new WindowsFormsApp5.Plus_Minus_Stat();
             this.abilityScore6 = new WindowsFormsApp5.AbilityScore();
             this.abilityScore5 = new WindowsFormsApp5.AbilityScore();
             this.abilityScore4 = new WindowsFormsApp5.AbilityScore();
             this.abilityScore3 = new WindowsFormsApp5.AbilityScore();
             this.abilityScore2 = new WindowsFormsApp5.AbilityScore();
             this.abilityScore1 = new WindowsFormsApp5.AbilityScore();
+            this.dex = new WindowsFormsApp5.Plus_Minus_Stat();
+            this.con = new WindowsFormsApp5.Plus_Minus_Stat();
+            this.inte = new WindowsFormsApp5.Plus_Minus_Stat();
+            this.wis = new WindowsFormsApp5.Plus_Minus_Stat();
+            this.cha = new WindowsFormsApp5.Plus_Minus_Stat();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -490,6 +496,14 @@
             this.ac_minus.Visible = false;
             this.ac_minus.Click += new System.EventHandler(this.plus_minus_stat);
             // 
+            // str
+            // 
+            this.str.BackColor = System.Drawing.SystemColors.Control;
+            this.str.Location = new System.Drawing.Point(121, 52);
+            this.str.Name = "str";
+            this.str.Size = new System.Drawing.Size(35, 64);
+            this.str.TabIndex = 45;
+            // 
             // abilityScore6
             // 
             this.abilityScore6.BackColor = System.Drawing.Color.Transparent;
@@ -550,11 +564,57 @@
             this.abilityScore1.TabIndex = 16;
             this.abilityScore1.Load += new System.EventHandler(this.abilityScore1_Load);
             // 
+            // dex
+            // 
+            this.dex.BackColor = System.Drawing.SystemColors.Control;
+            this.dex.Location = new System.Drawing.Point(121, 132);
+            this.dex.Name = "dex";
+            this.dex.Size = new System.Drawing.Size(35, 64);
+            this.dex.TabIndex = 46;
+            // 
+            // con
+            // 
+            this.con.BackColor = System.Drawing.SystemColors.Control;
+            this.con.Location = new System.Drawing.Point(121, 212);
+            this.con.Name = "con";
+            this.con.Size = new System.Drawing.Size(35, 64);
+            this.con.TabIndex = 47;
+            // 
+            // inte
+            // 
+            this.inte.BackColor = System.Drawing.SystemColors.Control;
+            this.inte.Location = new System.Drawing.Point(121, 292);
+            this.inte.Name = "inte";
+            this.inte.Size = new System.Drawing.Size(35, 64);
+            this.inte.TabIndex = 48;
+            // 
+            // wis
+            // 
+            this.wis.BackColor = System.Drawing.SystemColors.Control;
+            this.wis.Location = new System.Drawing.Point(121, 372);
+            this.wis.Name = "wis";
+            this.wis.Size = new System.Drawing.Size(35, 64);
+            this.wis.TabIndex = 49;
+            // 
+            // cha
+            // 
+            this.cha.BackColor = System.Drawing.SystemColors.Control;
+            this.cha.Location = new System.Drawing.Point(121, 452);
+            this.cha.Name = "cha";
+            this.cha.Size = new System.Drawing.Size(35, 64);
+            this.cha.TabIndex = 50;
+            // 
             // cha_save
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(529, 831);
+            this.Controls.Add(this.cha);
+            this.Controls.Add(this.wis);
+            this.Controls.Add(this.inte);
+            this.Controls.Add(this.con);
+            this.Controls.Add(this.dex);
+            this.Controls.Add(this.str);
             this.Controls.Add(this.ac_minus);
             this.Controls.Add(this.ac_plus);
             this.Controls.Add(this.spells);
@@ -641,6 +701,12 @@
         private System.Windows.Forms.Button spells;
         private System.Windows.Forms.Button ac_plus;
         private System.Windows.Forms.Button ac_minus;
+        private Plus_Minus_Stat str;
+        private Plus_Minus_Stat dex;
+        private Plus_Minus_Stat con;
+        private Plus_Minus_Stat inte;
+        private Plus_Minus_Stat wis;
+        private Plus_Minus_Stat cha;
     }
 }
 
