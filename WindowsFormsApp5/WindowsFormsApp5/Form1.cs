@@ -228,20 +228,22 @@ namespace WindowsFormsApp5
             {
                 abChecks = new string[,]
                 {
-                    {"Athletics","str"},
                     {"Acrobatics","dex" },
+                    {"Animal Handling","wis" },
+                    {"Arcana","int" },
+                    {"Athletics","str"},
+                    {"Deception","cha"},
+                    {"History","int" },
+                    {"Insight","wis"},
+                    {"Intimidation","cha"},
+                    {"Medicine","wis" },
+                    {"Nature","int" },
+                    {"Perception","wis"},
+                    {"Performance","cha"},
+                    {"Persuasion","cha"},
+                    {"Religion","int" },
                     {"Sleight of Hand","dex" },
                     {"Stealth","dex" },
-                    {"Arcana","int"},
-                    {"History","int" },
-                    {"Investigation","int" },
-                    {"Nature","int" },
-                    {"Religion","int" },
-                    {"Animal Handling","wis" },
-                    {"Insight","wis"},
-                    {"Medicine","wis" },
-                    {"Animal Handling","wis" },
-                    {"Perception","wis"},
                     {"Survival","wis" },
                 };
 
