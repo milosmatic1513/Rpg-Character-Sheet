@@ -31,3 +31,11 @@ C:\Users\Panepistimio\Desktop\dnd_sheet-Dionisis\WindowsFormsApp5\WindowsFormsAp
 C:\Users\Panepistimio\Desktop\dnd_sheet-Dionisis\WindowsFormsApp5\WindowsFormsApp5\bin\Debug\WindowsFormsApp5.exe
 C:\Users\Panepistimio\Desktop\dnd_sheet-Dionisis\WindowsFormsApp5\WindowsFormsApp5\bin\Debug\WindowsFormsApp5.pdb
 J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.AbilitySkill.resources
+C:\Users\Panepistimio\Desktop\dnd_sheet-Dionisis\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.AbilitySkill.resources
+C:\Users\Panepistimio\Desktop\dnd_sheet-Dionisis\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.spell.resources
+C:\Users\Panepistimio\Desktop\dnd_sheet-Dionisis\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.Spells.resources
+C:\Users\Panepistimio\Desktop\dnd_sheet-Dionisis\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.Spell_creation.resources
+J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.spell.resources
+J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.Spells.resources
+J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.Spell_creation.resources
+J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.Plus_Minus_Stat.resources
