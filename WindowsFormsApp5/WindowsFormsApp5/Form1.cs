@@ -236,6 +236,7 @@ namespace WindowsFormsApp5
                     {"History","int" },
                     {"Insight","wis"},
                     {"Intimidation","cha"},
+                    {"Investigation","int"},
                     {"Medicine","wis" },
                     {"Nature","int" },
                     {"Perception","wis"},
@@ -248,7 +249,6 @@ namespace WindowsFormsApp5
                 };
 
                 abProfs = new bool[abChecks.GetLength(0),2];
-
 
                 for (int i =0; i < abProfs.GetLength(0);i++)
                 {
@@ -409,8 +409,8 @@ namespace WindowsFormsApp5
             player.editOrLvl = false;
             button3.Enabled = false;
             if(player.level<=20) player.level += 1;
-            done_Click(sender, e);
             UpdateGeneral();
+            done_Click(sender, e);
         }
 
         private void done_Click(object sender, EventArgs e)
