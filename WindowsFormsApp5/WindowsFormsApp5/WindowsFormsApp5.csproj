@@ -77,6 +77,12 @@
     <Compile Include="spell.Designer.cs">
       <DependentUpon>spell.cs</DependentUpon>
     </Compile>
+    <Compile Include="SpellDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpellDisplay.Designer.cs">
+      <DependentUpon>SpellDisplay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Spells.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </Compile>
     <EmbeddedResource Include="spell.resx">
       <DependentUpon>spell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpellDisplay.resx">
+      <DependentUpon>SpellDisplay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Spells.resx">
       <DependentUpon>Spells.cs</DependentUpon>

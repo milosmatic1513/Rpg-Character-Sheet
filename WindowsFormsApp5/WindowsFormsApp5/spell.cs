@@ -12,11 +12,10 @@ namespace WindowsFormsApp5
 {
     public partial class spell : UserControl
     {
-
-        string name,time,comps, duration, desc,range;
+        string name, cast, dur, comp, desc, range, clas, lvl, sch;
         Spell_creation sp_create;
+
         Spells parentForm;
-        ToolTip t_name, t_castTime, t_comps, t_dur, t_ran;
         int positionInList;
 
         private void remove_Click(object sender, EventArgs e)
@@ -30,59 +29,84 @@ namespace WindowsFormsApp5
             MessageBox.Show(desc,"Description");
         }
 
-        private void edit_Click(object sender, EventArgs e)
+        private void Clicked()
         {
-            sp_create = new Spell_creation(s_name.Text,c_time.Text,s_dur.Text,s_comps.Text,desc,rng.Text);
-            sp_create.ShowDialog();
-            name = sp_create.spell_name;
-            time = sp_create.casting_time;
-            comps = sp_create.comps;
-            duration = sp_create.duration;
-            desc = sp_create.desc;
-            range = sp_create.range;
-            update();
+            string s =
+              "Name : "
+            + name
+             + "\n\nClasses :  "
+              + clas
+              + "\n\nSchool : "
+              + sch
+              + "\n\nLevel : "
+              + lvl
+              + "\n\nCasting : "
+              + cast
+              + "\n\nRange : "
+             + range
+              + "\n\nComponents : "
+              + comp
+              + "\n\nDuration : "
+             + dur
+              + "\n\nDescription :\n"
+              + desc;
+            MessageBox.Show(s);
         }
 
-        public spell(string name_temp,string time_temp,string comps_temp, string duration_temp,string desc_temp, string range_temp, int i)
+        private void edit_Click(object sender, EventArgs e)
+        {
+            sp_create = new Spell_creation(s_name.Text, c_time.Text, s_dur.Text, s_comps.Text, desc, rng.Text, clas, lvl, sch);
+            sp_create.ShowDialog();
+            if (sp_create.c1)
+            {
+                name = sp_create.spell_name;
+                cast = sp_create.casting_time;
+                comp = sp_create.comps;
+                dur = sp_create.duration;
+                desc = sp_create.desc;
+                range = sp_create.range;
+                clas = sp_create.clas;
+                lvl = sp_create.level;
+                sch = sp_create.sch;
+                update();
+            }
+        }
+
+        public spell(string name_temp,string time_temp,string comps_temp, string duration_temp,string desc_temp, string range_temp, string class_temp, string level_temp, string school_temp, int i, Spells parent)
         {
             InitializeComponent();
             name = name_temp;
-            time = time_temp;
-            comps = comps_temp;
-            duration = duration_temp;
+            cast = time_temp;
+            comp = comps_temp;
+            dur = duration_temp;
             desc = desc_temp;
             range = range_temp;
+            clas = class_temp;
+            lvl = level_temp;
+            sch = school_temp;
+
             positionInList = i;
+            parentForm = parent;
+            update();
+
+            foreach (Control s in this.Controls)
+            {
+                if (s.GetType().Equals(typeof(TextBox)))
+                {
+                    TextBox x = (TextBox)s;
+                    x.Click += new EventHandler((sender, e) => Clicked());
+                }
+            }
+            this.Click += new EventHandler((sender, e) => Clicked());
         }
+
         private void update()
         {
             s_name.Text = name;
-            c_time.Text = time;
-            s_comps.Text = comps;
-            s_dur.Text = duration;
+            c_time.Text = cast;
+            s_comps.Text = comp;
+            s_dur.Text = dur;
             rng.Text = range;
-        }
-
-
-        private void spell_Load(object sender, EventArgs e)
-        {
-            s_name.Text = name;
-            c_time.Text = time;
-            s_comps.Text = comps;
-            s_dur.Text = duration;
-            rng.Text = range;
-            parentForm =(Spells) this.FindForm();
-
-            t_name = new ToolTip();
-            t_castTime = new ToolTip();
-            t_comps = new ToolTip();
-            t_dur = new ToolTip();
-            t_ran = new ToolTip();
-            t_name.SetToolTip(s_name, name);
-            t_castTime.SetToolTip(c_time, time);
-            t_comps.SetToolTip(s_comps, comps);
-            t_dur.SetToolTip(s_dur, duration);
-            t_ran.SetToolTip(rng, range);
         }
     }
 }

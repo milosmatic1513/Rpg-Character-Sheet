@@ -25,13 +25,11 @@ namespace WindowsFormsApp5
         public void Update()
         {
             flowLayoutPanel1.Controls.Clear();
-            last_y = 0;
             int index = 0;
-            foreach (Spell_class sp in parentForm.getSpells() )
+            foreach (Spell_class sp in parentForm.getSpells())
             {
-                spell ab = new spell(sp.name, sp.casting_time, sp.components, sp.duration, sp.description,sp.range,index);
-                ab.Location = new Point(5, last_y);
-                last_y += 15;
+                spell ab = new spell(sp.name, sp.casting_time, sp.components, sp.duration, sp.description, sp.range, sp.clas, sp.lvl, sp.sch, index, this);
+                ab.Location = new Point(5, 0);
                 flowLayoutPanel1.Controls.Add(ab);
                 index++;
             }
@@ -53,13 +51,19 @@ namespace WindowsFormsApp5
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            sp = new Spell_creation();
+            sp = new Spell_creation(parentForm);
             sp.ShowDialog();
-            if (sp.c1 && sp.c2 && sp.c3 && sp.c4 && sp.c5)
+            if (sp.c1)
             {
-                parentForm.addSpell(new Spell_class(sp.spell_name, sp.casting_time, sp.comps, sp.duration, sp.desc, sp.range));
+                parentForm.addSpell(new Spell_class(sp.spell_name, sp.casting_time, sp.comps, sp.duration, sp.desc, sp.range, sp.clas, sp.level, sp.sch));
                 Update();
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SpellDisplay spd = new SpellDisplay(parentForm, this);
+            spd.Show();
         }
     }
 }

@@ -460,7 +460,7 @@
             // 
             // spells
             // 
-            this.spells.Location = new System.Drawing.Point(389, 235);
+            this.spells.Location = new System.Drawing.Point(403, 235);
             this.spells.Name = "spells";
             this.spells.Size = new System.Drawing.Size(75, 23);
             this.spells.TabIndex = 42;

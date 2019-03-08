@@ -183,7 +183,6 @@ namespace WindowsFormsApp5
         public void addSpell(Spell_class spell)
         {
             player.spells.Add(spell);
-
         }
 
         public List<Spell_class> getSpells()
@@ -545,8 +544,6 @@ namespace WindowsFormsApp5
 
         private void save_Click(object sender, EventArgs e)
         {
-          
-
             if (string.IsNullOrWhiteSpace(name_box.Text))
             {
                 name_box.BackColor = Color.Pink;
@@ -605,16 +602,15 @@ namespace WindowsFormsApp5
         private void load_Click(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog();
-
-
             FileStream fs = new FileStream(openFileDialog1.FileName, FileMode.Open);
             player=(Player)formater.Deserialize(fs);
             UpdateGeneral();
             fs.Close();
-            
-            
         }
-
         
+        public string GetClass()
+        {
+            return class_box.Text;
+        }
     }
 }
