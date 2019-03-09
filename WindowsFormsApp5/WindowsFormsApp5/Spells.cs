@@ -62,7 +62,13 @@ namespace WindowsFormsApp5
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SpellDisplay spd = new SpellDisplay(parentForm, this);
+            SpellDisplay spd = new SpellDisplay(parentForm, this, true);  //Class specific spells
+            spd.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SpellDisplay spd = new SpellDisplay(parentForm, this, false);  //All spells
             spd.Show();
         }
     }

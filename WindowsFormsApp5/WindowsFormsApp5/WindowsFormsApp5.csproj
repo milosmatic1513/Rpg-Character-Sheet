@@ -63,6 +63,25 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="HomebrewItem.cs" />
+    <Compile Include="HomebrewItemCreation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomebrewItemCreation.Designer.cs">
+      <DependentUpon>HomebrewItemCreation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomebrewItemsDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomebrewItemsDisplay.Designer.cs">
+      <DependentUpon>HomebrewItemsDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item.Designer.cs">
+      <DependentUpon>Item.cs</DependentUpon>
+    </Compile>
     <Compile Include="Plus_Minus_Stat.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -104,6 +123,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomebrewItemCreation.resx">
+      <DependentUpon>HomebrewItemCreation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomebrewItemsDisplay.resx">
+      <DependentUpon>HomebrewItemsDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item.resx">
+      <DependentUpon>Item.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Plus_Minus_Stat.resx">
       <DependentUpon>Plus_Minus_Stat.cs</DependentUpon>

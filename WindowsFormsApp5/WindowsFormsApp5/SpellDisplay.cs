@@ -14,20 +14,28 @@ namespace WindowsFormsApp5
     {
         cha_save mainForm;
         Spells parentForm;
+        bool autoFiltered;
 
-        public SpellDisplay(cha_save p, Spells s)
+        public SpellDisplay(cha_save p, Spells s, bool aF)
         {
             InitializeComponent();
             mainForm = p;
             parentForm = s;
+            autoFiltered = aF;
         }
 
-        private string SpellNotIncluded()
+        private string SpellNotIncluded(string search)
         {
             string filter = "";
+            string tmp = search;
             foreach (Spell_class s in mainForm.getSpells())
             {
-                filter += " AND Name NOT LIKE '%" + s.name + "%'";
+                if (tmp == "")
+                {
+                    filter += "Name NOT LIKE '%" + s.name + "%'";
+                    tmp += "1";
+                }
+                else filter += " AND Name NOT LIKE '%" + s.name + "%'";
             }
             return filter;
         }
@@ -39,7 +47,10 @@ namespace WindowsFormsApp5
                 DataSet ds = new DataSet();
                 ds.ReadXml("Spells.xml");
                 dataGridView1.DataSource = ds.Tables[0];
-                string search = "Class LIKE '%" + mainForm.GetClass() + "%'" + SpellNotIncluded();
+                string search = "";
+                search = SpellNotIncluded(search);
+                if (autoFiltered && search == "") search += "Class LIKE '%" + mainForm.GetClass() + "%'";
+                else if (autoFiltered) search += " AND Class LIKE '%" + mainForm.GetClass() + "%'";
                 DataTable dt = (DataTable)dataGridView1.DataSource;
                 dt.DefaultView.RowFilter = search;
                 dataGridView1.DataSource = dt;
@@ -47,7 +58,6 @@ namespace WindowsFormsApp5
             catch (Exception ex)
             {
                 //MessageBox.Show("Spells file not found");
-                MessageBox.Show(SpellNotIncluded());
                 MessageBox.Show(ex.ToString());
             }
         }
@@ -93,7 +103,9 @@ namespace WindowsFormsApp5
             string dur = (durSearch.Text == "Any") ? "" : durSearch.Text;
             string clas = mainForm.GetClass();
 
-            string search = "Name LIKE '%" + name + "%' AND Class LIKE '%" + clas + "%' AND Casting LIKE '%" + casting + "%' AND Components LIKE '%" + comp + "%' AND Duration LIKE '%" + dur + "%'" + SpellNotIncluded();
+            string search = "Name LIKE '%" + name + "%' AND Casting LIKE '%" + casting + "%' AND Components LIKE '%" + comp + "%' AND Duration LIKE '%" + dur + "%'";
+            search += SpellNotIncluded(search);
+            if (autoFiltered) search += " AND Class LIKE '%" + mainForm.GetClass() + "%'";
             DataTable dt = (DataTable)dataGridView1.DataSource;
             dt.DefaultView.RowFilter = search;
             dataGridView1.DataSource = dt;

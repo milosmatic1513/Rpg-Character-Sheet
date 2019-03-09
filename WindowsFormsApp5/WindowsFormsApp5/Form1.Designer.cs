@@ -86,6 +86,7 @@
             this.abilityScore3 = new WindowsFormsApp5.AbilityScore();
             this.abilityScore2 = new WindowsFormsApp5.AbilityScore();
             this.abilityScore1 = new WindowsFormsApp5.AbilityScore();
+            this.button5 = new System.Windows.Forms.Button();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -429,7 +430,7 @@
             this.skills.AutoScroll = true;
             this.skills.BackColor = System.Drawing.Color.Transparent;
             this.skills.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.skills.Location = new System.Drawing.Point(203, 391);
+            this.skills.Location = new System.Drawing.Point(203, 381);
             this.skills.Name = "skills";
             this.skills.Size = new System.Drawing.Size(256, 211);
             this.skills.TabIndex = 38;
@@ -698,11 +699,22 @@
             this.abilityScore1.TabIndex = 16;
             this.abilityScore1.Load += new System.EventHandler(this.abilityScore1_Load);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(325, 598);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(125, 23);
+            this.button5.TabIndex = 61;
+            this.button5.Text = "HOMEBREW ITEMS";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // cha_save
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(529, 831);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox3);
@@ -819,6 +831,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button5;
     }
 }
 

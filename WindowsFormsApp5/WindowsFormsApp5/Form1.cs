@@ -97,7 +97,7 @@ namespace WindowsFormsApp5
                 toolsPanel.Controls.Add(ab);
             }
         }
-        
+
         /*
         private void addArmors()
         {
@@ -179,6 +179,20 @@ namespace WindowsFormsApp5
             }
         }
         */
+        public void addHomebrew(HomebrewItem hm)
+        {
+            player.hmItems.Add(hm);
+        }
+
+        public void deleteHomebrew(int i)
+        {
+            player.hmItems.RemoveAt(i);
+        }
+
+        public List<HomebrewItem> getHomebrewItems()
+        {
+            return player.hmItems;
+        }
 
         public void addSpell(Spell_class spell)
         {
@@ -218,11 +232,11 @@ namespace WindowsFormsApp5
             public string name="";
             public int level = 1;
             public string p_class = "";
-            public Image player_image=null;
-            public bool[] saving_throws=new bool[6];
-            public List<Spell_class> spells=new List<Spell_class>();
-
-
+            public Image player_image = null;
+            public bool[] saving_throws = new bool[6];
+            public List<Spell_class> spells = new List<Spell_class>();
+            public List<HomebrewItem> hmItems = new List<HomebrewItem>();
+            
             public Player()
             {
                 abChecks = new string[,]
@@ -601,13 +615,21 @@ namespace WindowsFormsApp5
 
         private void load_Click(object sender, EventArgs e)
         {
-            openFileDialog1.ShowDialog();
-            FileStream fs = new FileStream(openFileDialog1.FileName, FileMode.Open);
-            player=(Player)formater.Deserialize(fs);
-            UpdateGeneral();
-            fs.Close();
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                FileStream fs = new FileStream(openFileDialog1.FileName, FileMode.Open);
+                player = (Player)formater.Deserialize(fs);
+                UpdateGeneral();
+                fs.Close();
+            }
         }
-        
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            HomebrewItemsDisplay hmd = new HomebrewItemsDisplay(this);
+            hmd.Show();
+        }
+
         public string GetClass()
         {
             return class_box.Text;

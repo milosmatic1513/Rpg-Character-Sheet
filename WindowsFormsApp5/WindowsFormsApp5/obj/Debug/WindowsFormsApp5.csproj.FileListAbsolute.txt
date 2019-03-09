@@ -40,3 +40,6 @@ J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\ob
 J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.Spell_creation.resources
 J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.Plus_Minus_Stat.resources
 J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.SpellDisplay.resources
+J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.HomebrewItemCreation.resources
+J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.HomebrewItemsDisplay.resources
+J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.Item.resources
