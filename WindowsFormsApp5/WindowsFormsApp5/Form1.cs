@@ -98,87 +98,6 @@ namespace WindowsFormsApp5
             }
         }
 
-        /*
-        private void addArmors()
-        {
-            string[] armorName = new string[12];
-            int[,] armor = new int[12, 4];
-            armorName[0] = "Padded";  //Name
-            armorName[1] = "Leather";
-            armorName[2] = "Studded leather";
-            armorName[3] = "Hide";
-            armorName[4] = "Chain shirt";
-            armorName[5] = "Scale mail";
-            armorName[6] = "Breastplate";
-            armorName[7] = "Half plate";
-            armorName[8] = "Ring mail";
-            armorName[9] = "Chain mail";
-            armorName[10] = "Splint";
-            armorName[11] = "Plate";
-
-            armor[0, 0] = 0;  //Strength Requirement
-            armor[1, 0] = 0;
-            armor[2, 0] = 0;
-            armor[3, 0] = 0;
-            armor[4, 0] = 0;
-            armor[5, 0] = 0;
-            armor[6, 0] = 0;
-            armor[7, 0] = 0;
-            armor[8, 0] = 0;
-            armor[9, 0] = 13;
-            armor[10, 0] = 15;
-            armor[11, 0] = 15;
-
-            armor[0, 1] = -1;  //+Dex maximum
-            armor[1, 1] = -1;
-            armor[2, 1] = -1;
-            armor[3, 1] = 2;
-            armor[4, 1] = 2;
-            armor[5, 1] = 2;
-            armor[6, 1] = 2;
-            armor[7, 1] = 2;
-            armor[8, 1] = 0;
-            armor[9, 1] = 0;
-            armor[10, 1] = 0;
-            armor[11, 1] = 0;
-
-            armor[0, 2] = 11;  //Basic AC
-            armor[1, 2] = 11;
-            armor[2, 2] = 12;
-            armor[3, 2] = 12;
-            armor[4, 2] = 13;
-            armor[5, 2] = 14;
-            armor[6, 2] = 14;
-            armor[7, 2] = 15;
-            armor[8, 2] = 14;
-            armor[9, 2] = 16;
-            armor[10, 2] = 17;
-            armor[11, 2] = 18;
-
-            armor[0, 3] = 1;  //Disadvantage
-            armor[1, 3] = 0;
-            armor[2, 3] = 0;
-            armor[3, 3] = 0;
-            armor[4, 3] = 0;
-            armor[5, 3] = 1;
-            armor[6, 3] = 0;
-            armor[7, 3] = 1;
-            armor[8, 3] = 1;
-            armor[9, 3] = 1;
-            armor[10, 3] = 1;
-            armor[11, 3] = 1;
-
-            for (int i = 0; i < armorEquipment.Length; i++)
-            {
-                AbilitySkill ab = new AbilitySkill();
-                //ab.SetAll_Armor(armorName[i], armor[i, 3], armor[i, 1], ((AbilityScore)player.player_stats["dex"]).GetModifier(), armor[i, 0], armor[i, 2], ((AbilityScore)player.player_stats["str"]).GetScore());
-                ab.SetAll_Armor(armorName[i], armor[i, 3], armor[i, 1], 2, armor[i, 0], armor[i, 2], 10);
-                ab.Location = new Point(5, i * 20);
-                armorEquipment[i] = ab;
-                armorPanel.Controls.Add(ab);
-            }
-        }
-        */
         public void addHomebrew(HomebrewItem hm)
         {
             player.hmItems.Add(hm);
@@ -187,6 +106,11 @@ namespace WindowsFormsApp5
         public void deleteHomebrew(int i)
         {
             player.hmItems.RemoveAt(i);
+        }
+
+        public void updateHomebrew(HomebrewItem hm, int i)
+        {
+            player.hmItems[i] = hm;
         }
 
         public List<HomebrewItem> getHomebrewItems()

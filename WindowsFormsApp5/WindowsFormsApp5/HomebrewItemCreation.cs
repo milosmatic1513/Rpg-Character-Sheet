@@ -12,22 +12,36 @@ namespace WindowsFormsApp5
 {
     public partial class HomebrewItemCreation : Form
     {
-        cha_save parentForm;
         public bool done;
+        public HomebrewItem homeB;
 
-        public HomebrewItemCreation(cha_save p)
+        public HomebrewItemCreation()
         {
             InitializeComponent();
-            parentForm = p;
             done = false;
+            homeB = new HomebrewItem();
+            add.Text = "Add Item";
+        }
+
+        public HomebrewItemCreation(string n,string r,string dT,string dD,string desc,string a)
+        {
+            InitializeComponent();
+            done = false;
+            homeB = new HomebrewItem();
+            add.Text = "Edit Item";
+            name.Text = n;
+            rarity.Text = r;
+            dmgType.Text = dT;
+            dmgDice.Text = dD;
+            description.Text = desc;
+            ac.Text = a;
         }
 
         private void add_Click(object sender, EventArgs e)
         {
             if (name.Text != "" && rarity.Text != "" && description.Text != "")
             {
-                HomebrewItem hm = new HomebrewItem(name.Text, rarity.Text, dmgType.Text, dmgDice.Text, description.Text);
-                parentForm.addHomebrew(hm);
+                homeB = new HomebrewItem(name.Text, rarity.Text, dmgType.Text, dmgDice.Text, description.Text, ac.Text);
                 done = true;
                 this.Close();
             }

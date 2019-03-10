@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp5
 {
+    [Serializable]
     public class HomebrewItem
     {
         public string Name { get; set; }
@@ -13,6 +14,7 @@ namespace WindowsFormsApp5
         public string DmgType { get; set; }
         public string DmgDice { get; set; }
         public string Description { get; set; }
+        public string Ac { get; set; }
         public HomebrewItem()
         {
             Name = "";
@@ -20,14 +22,16 @@ namespace WindowsFormsApp5
             DmgType = "";
             DmgDice = "";
             Description = "";
+            Ac = "";
         }
-        public HomebrewItem(string na, string ra, string dT, string dD, string des)
+        public HomebrewItem(string na, string ra, string dT, string dD, string des, string a)
         {
             Name = na;
             Rarity = ra;
             DmgType = dT;
             DmgDice = dD;
             Description = des;
+            Ac = a;
         }
     }
 }

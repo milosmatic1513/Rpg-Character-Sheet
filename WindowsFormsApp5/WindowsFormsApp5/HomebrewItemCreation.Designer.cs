@@ -40,6 +40,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cancel = new System.Windows.Forms.Button();
             this.add = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.ac = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // name
@@ -53,9 +55,10 @@
             // 
             // description
             // 
-            this.description.Location = new System.Drawing.Point(15, 172);
+            this.description.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.description.Location = new System.Drawing.Point(15, 196);
             this.description.Name = "description";
-            this.description.Size = new System.Drawing.Size(245, 187);
+            this.description.Size = new System.Drawing.Size(245, 163);
             this.description.TabIndex = 4;
             this.description.Text = "";
             this.description.TextChanged += new System.EventHandler(this.description_TextChanged);
@@ -95,9 +98,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 115);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 18);
+            this.label3.Size = new System.Drawing.Size(109, 18);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Damage dice";
+            this.label3.Text = "Damage Dice";
             // 
             // dmgDice
             // 
@@ -129,7 +132,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 151);
+            this.label5.Location = new System.Drawing.Point(12, 175);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 18);
             this.label5.TabIndex = 9;
@@ -157,11 +160,31 @@
             this.add.UseVisualStyleBackColor = true;
             this.add.Click += new System.EventHandler(this.add_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(12, 145);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(102, 18);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Armor Class";
+            // 
+            // ac
+            // 
+            this.ac.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ac.Location = new System.Drawing.Point(126, 142);
+            this.ac.Name = "ac";
+            this.ac.Size = new System.Drawing.Size(134, 24);
+            this.ac.TabIndex = 10;
+            // 
             // HomebrewItemCreation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(273, 408);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.ac);
             this.Controls.Add(this.add);
             this.Controls.Add(this.cancel);
             this.Controls.Add(this.label5);
@@ -195,5 +218,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button cancel;
         private System.Windows.Forms.Button add;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox ac;
     }
 }

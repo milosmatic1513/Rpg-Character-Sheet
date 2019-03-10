@@ -32,6 +32,8 @@
             this.damageType = new System.Windows.Forms.TextBox();
             this.damageDice = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.armorClass = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // nameBox
@@ -49,22 +51,22 @@
             this.damageType.Location = new System.Drawing.Point(92, 4);
             this.damageType.Name = "damageType";
             this.damageType.ReadOnly = true;
-            this.damageType.Size = new System.Drawing.Size(82, 22);
+            this.damageType.Size = new System.Drawing.Size(53, 22);
             this.damageType.TabIndex = 1;
             // 
             // damageDice
             // 
             this.damageDice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.damageDice.Location = new System.Drawing.Point(180, 4);
+            this.damageDice.Location = new System.Drawing.Point(151, 4);
             this.damageDice.Name = "damageDice";
             this.damageDice.ReadOnly = true;
-            this.damageDice.Size = new System.Drawing.Size(82, 22);
+            this.damageDice.Size = new System.Drawing.Size(53, 22);
             this.damageDice.TabIndex = 2;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(270, 4);
+            this.button1.Location = new System.Drawing.Point(308, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(24, 22);
             this.button1.TabIndex = 3;
@@ -72,17 +74,39 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // armorClass
+            // 
+            this.armorClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.armorClass.Location = new System.Drawing.Point(210, 4);
+            this.armorClass.Name = "armorClass";
+            this.armorClass.ReadOnly = true;
+            this.armorClass.Size = new System.Drawing.Size(44, 22);
+            this.armorClass.TabIndex = 4;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(260, 4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(42, 22);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Edit";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Item
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.armorClass);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.damageDice);
             this.Controls.Add(this.damageType);
             this.Controls.Add(this.nameBox);
             this.Name = "Item";
-            this.Size = new System.Drawing.Size(300, 30);
+            this.Size = new System.Drawing.Size(335, 30);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -94,5 +118,7 @@
         private System.Windows.Forms.TextBox damageType;
         private System.Windows.Forms.TextBox damageDice;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox armorClass;
+        private System.Windows.Forms.Button button2;
     }
 }

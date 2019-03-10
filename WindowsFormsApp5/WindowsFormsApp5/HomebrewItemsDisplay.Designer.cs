@@ -35,7 +35,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(110, 7);
+            this.button1.Location = new System.Drawing.Point(133, 7);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(118, 28);
             this.button1.TabIndex = 0;
@@ -45,17 +45,18 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 41);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(320, 181);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(346, 181);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // HomebrewItemsDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 234);
+            this.ClientSize = new System.Drawing.Size(370, 234);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.button1);
             this.Name = "HomebrewItemsDisplay";
