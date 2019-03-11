@@ -58,7 +58,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(23, 20);
             this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "10";
+            this.textBox1.Text = "8";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // AbilityScore

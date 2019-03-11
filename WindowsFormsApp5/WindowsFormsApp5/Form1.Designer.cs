@@ -504,6 +504,7 @@
             this.richTextBox1.Size = new System.Drawing.Size(239, 174);
             this.richTextBox1.TabIndex = 51;
             this.richTextBox1.Text = "";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // label3
             // 
@@ -533,6 +534,7 @@
             this.textBox1.Size = new System.Drawing.Size(37, 24);
             this.textBox1.TabIndex = 54;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -542,6 +544,7 @@
             this.textBox2.Size = new System.Drawing.Size(37, 24);
             this.textBox2.TabIndex = 56;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label5
             // 
@@ -561,6 +564,7 @@
             this.textBox3.Size = new System.Drawing.Size(37, 24);
             this.textBox3.TabIndex = 58;
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label7
             // 
@@ -580,6 +584,7 @@
             this.textBox4.Size = new System.Drawing.Size(37, 24);
             this.textBox4.TabIndex = 60;
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label8
             // 

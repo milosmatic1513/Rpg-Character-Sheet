@@ -59,7 +59,7 @@
             this.description.Location = new System.Drawing.Point(15, 196);
             this.description.Name = "description";
             this.description.Size = new System.Drawing.Size(245, 163);
-            this.description.TabIndex = 4;
+            this.description.TabIndex = 5;
             this.description.Text = "";
             this.description.TextChanged += new System.EventHandler(this.description_TextChanged);
             // 
@@ -141,10 +141,10 @@
             // cancel
             // 
             this.cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancel.Location = new System.Drawing.Point(43, 373);
+            this.cancel.Location = new System.Drawing.Point(46, 373);
             this.cancel.Name = "cancel";
             this.cancel.Size = new System.Drawing.Size(75, 23);
-            this.cancel.TabIndex = 6;
+            this.cancel.TabIndex = 7;
             this.cancel.Text = "Cancel";
             this.cancel.UseVisualStyleBackColor = true;
             this.cancel.Click += new System.EventHandler(this.cancel_Click);
@@ -155,7 +155,7 @@
             this.add.Location = new System.Drawing.Point(152, 373);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(75, 23);
-            this.add.TabIndex = 5;
+            this.add.TabIndex = 6;
             this.add.Text = "Add Item";
             this.add.UseVisualStyleBackColor = true;
             this.add.Click += new System.EventHandler(this.add_Click);
@@ -176,7 +176,7 @@
             this.ac.Location = new System.Drawing.Point(126, 142);
             this.ac.Name = "ac";
             this.ac.Size = new System.Drawing.Size(134, 24);
-            this.ac.TabIndex = 10;
+            this.ac.TabIndex = 4;
             // 
             // HomebrewItemCreation
             // 

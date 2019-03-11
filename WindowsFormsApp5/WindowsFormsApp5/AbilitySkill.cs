@@ -15,19 +15,22 @@ namespace WindowsFormsApp5
         int modifier, proficience;
         public string skill_tag;
         cha_save parentForm;
+        bool isSkill;
 
 
-        public AbilitySkill()
+        public AbilitySkill(bool x)
         {
             InitializeComponent();
             modifier = 0;
             proficience = 2;
+            isSkill = x;
         }
 
         public void ChangeState(bool single,bool doubl)
         {
             prof.Checked = single;
             doubleProf.Checked = doubl;
+            this.Update();
         }
 
         public void SetAll_Skills(string n, string s, int mo, int pro)
@@ -77,11 +80,9 @@ namespace WindowsFormsApp5
 
         private void AbilitySkill_Load(object sender, EventArgs e)
         {
-            
-            parentForm = (cha_save) this.FindForm() ;
-            
+            parentForm = (cha_save)this.FindForm();
         }
-        public bool getProf ()
+        public bool getProf()
         {
             return prof.Checked;
         }
@@ -92,7 +93,8 @@ namespace WindowsFormsApp5
         private void doubleProf_CheckedChanged(object sender, EventArgs e)
         {
             UpdateMod(modifier, proficience);
-            parentForm.updateStat(skill_tag, prof.Checked, doubleProf.Checked);
+            if (isSkill) parentForm.updateStat(skill_tag, prof.Checked, doubleProf.Checked);
+            else parentForm.updateItemProf(skill.Text, prof.Checked, doubleProf.Checked);
         }
 
         public bool Checked()
@@ -113,7 +115,8 @@ namespace WindowsFormsApp5
                 doubleProf.Enabled = false;
                 UpdateMod(modifier, proficience);
             }
-            parentForm.updateStat(skill_tag, prof.Checked, doubleProf.Checked);
+            if (isSkill) parentForm.updateStat(skill_tag, prof.Checked, doubleProf.Checked);
+            else parentForm.updateItemProf(skill.Text, prof.Checked, doubleProf.Checked);
         }
     }
 }

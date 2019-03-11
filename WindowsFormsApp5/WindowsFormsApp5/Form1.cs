@@ -70,7 +70,7 @@ namespace WindowsFormsApp5
             abilitySkills = new AbilitySkill[player.abChecks.GetLength(0)];
             for (int i = 0; i < player.abChecks.GetLength(0); i++)
             {
-                AbilitySkill ab = new AbilitySkill();
+                AbilitySkill ab = new AbilitySkill(true);
                 ab.SetAll_Skills(player.abChecks[i, 0], player.abChecks[i, 1],get_mod((int)player.player_stats[player.abChecks[i, 1]]), player.prof);
                 ab.Location = new Point(5, i * 20);
                 abilitySkills[i]=ab;
@@ -90,13 +90,40 @@ namespace WindowsFormsApp5
 
             for (int i = 0; i < toolProficiencies.Length; i++)
             {
-                AbilitySkill ab = new AbilitySkill();
+                AbilitySkill ab = new AbilitySkill(false);
                 ab.SetAll_Tools(tools[i], int.Parse(prof_lbl.Text));
                 ab.Location = new Point(5, i * 20);
                 toolProficiencies[i] = ab;
                 toolsPanel.Controls.Add(ab);
             }
+
+            for (int i = 0; i < toolProficiencies.Length; i++)
+            {
+                if (player.itemProf[i, 0] || player.itemProf[i, 1])
+                {
+                    toolProficiencies[i].ChangeState(player.itemProf[i, 0], player.itemProf[i, 1]);
+                }
+            }
         }
+
+        public void updateItemProf(string item, bool c1,bool c2)
+        {
+            int index = -1;
+            for (int i = 0; i < player.itemChecks.Length; i++)
+            {
+                if (player.itemChecks[i] == item)
+                {
+                    index = i;
+                    break;
+                }
+            }
+            if (index != -1)
+            {
+                player.itemProf[index, 0] = c1;
+                player.itemProf[index, 1] = c2;
+            }
+        }
+
 
         public void addHomebrew(HomebrewItem hm)
         {
@@ -151,7 +178,7 @@ namespace WindowsFormsApp5
             public string[,] abChecks;
             public bool[,] abProfs;
             public int prof = 0;
-            public int ac = 0;
+            public int ac = 10;
             public int lvlup = 0;
             public string name="";
             public int level = 1;
@@ -160,6 +187,10 @@ namespace WindowsFormsApp5
             public bool[] saving_throws = new bool[6];
             public List<Spell_class> spells = new List<Spell_class>();
             public List<HomebrewItem> hmItems = new List<HomebrewItem>();
+            public string[] itemChecks;
+            public bool[,] itemProf;
+            public string equipment = "";
+            public string[] money = new string[] { "0", "0", "0", "0" };
             
             public Player()
             {
@@ -184,14 +215,29 @@ namespace WindowsFormsApp5
                     {"Stealth","dex" },
                     {"Survival","wis" },
                 };
-
                 abProfs = new bool[abChecks.GetLength(0),2];
-
                 for (int i =0; i < abProfs.GetLength(0);i++)
                 {
-                        abProfs[i,0] = false;
-                        abProfs[i,1] = false;
+                    abProfs[i,0] = false;
+                    abProfs[i,1] = false;
                 }
+
+                itemChecks = new string[]
+                {
+                    "Disguise Kit",
+                    "Forgery Kit",
+                    "Herbalism Kit",
+                    "Navigator's Tools",
+                    "Poisoner's Kit",
+                    "Thieves' Tools",
+                };
+                itemProf = new bool[itemChecks.Length, 2];
+                for (int i = 0; i < 6; i++)
+                {
+                    itemProf[i, 0] = false;
+                    itemProf[i, 1] = false;
+                }
+
                 for (int i = 0; i < saving_throws.Length; i++)
                 {
                     saving_throws[i] = false;
@@ -260,24 +306,35 @@ namespace WindowsFormsApp5
                 CheckBox temp=(CheckBox)page_saving_throws[i];
                 temp.Checked= player.saving_throws[i];
             }
-            
-            for (int i = 0; i < toolProficiencies.Length; i++)
+
+            int k = 0;
+            foreach (Control s in toolsPanel.Controls)
             {
-                toolProficiencies[i].UpdateMod(0, int.Parse(prof_lbl.Text));
+                AbilitySkill tmp = (AbilitySkill)s;
+                if (tmp.GetName() == player.itemChecks[k])
+                {
+                    tmp.ChangeState(player.itemProf[k, 0], player.itemProf[k, 1]);
+                }
+                k++;
             }
 
             level.Text = player.level.ToString();
+            richTextBox1.Text = player.equipment;
+            textBox1.Text = player.money[0];
+            textBox2.Text = player.money[1];
+            textBox3.Text = player.money[2];
+            textBox4.Text = player.money[3];
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             player.prof = int.Parse(prof_lbl.Text);
-            player.player_stats.Add("str", 10);
-            player.player_stats.Add("dex", 10);
-            player.player_stats.Add("con", 10);
-            player.player_stats.Add("int", 10);
-            player.player_stats.Add("wis", 10);
-            player.player_stats.Add("cha", 10);
+            player.player_stats.Add("str", 8);
+            player.player_stats.Add("dex", 8);
+            player.player_stats.Add("con", 8);
+            player.player_stats.Add("int", 8);
+            player.player_stats.Add("wis", 8);
+            player.player_stats.Add("cha", 8);
 
             checks = new Hashtable()
             {
@@ -295,7 +352,7 @@ namespace WindowsFormsApp5
                 { "class" ,class_box},
                 {"level", level },
                 {"prof",prof_lbl },
-                {"ac",prof_lbl }
+                {"ac",ac }
             };
             page_saving_throws = new CheckBox[] { str_save, dex_save, con_save, intel_save, wis_save, chaa_save };
 
@@ -552,6 +609,31 @@ namespace WindowsFormsApp5
         {
             HomebrewItemsDisplay hmd = new HomebrewItemsDisplay(this);
             hmd.Show();
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            player.equipment = richTextBox1.Text;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            player.money[0] = textBox1.Text;
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            player.money[1] = textBox2.Text;
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            player.money[2] = textBox3.Text;
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            player.money[3] = textBox4.Text;
         }
 
         public string GetClass()
