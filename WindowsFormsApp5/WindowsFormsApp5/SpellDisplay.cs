@@ -57,7 +57,6 @@ namespace WindowsFormsApp5
             }
             catch (Exception ex)
             {
-                //MessageBox.Show("Spells file not found");
                 MessageBox.Show(ex.ToString());
             }
         }

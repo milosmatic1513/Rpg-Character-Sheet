@@ -636,6 +636,12 @@ namespace WindowsFormsApp5
             player.money[3] = textBox4.Text;
         }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Classes cl = new Classes();
+            cl.Show();
+        }
+
         public string GetClass()
         {
             return class_box.Text;

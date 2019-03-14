@@ -43,3 +43,5 @@ J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\ob
 J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.HomebrewItemCreation.resources
 J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.HomebrewItemsDisplay.resources
 J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.Item.resources
+J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.Classes.resources
+J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.classRow.resources
