@@ -638,8 +638,17 @@ namespace WindowsFormsApp5
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Classes cl = new Classes();
+            classesMidway cl = new classesMidway();
             cl.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 7; i++)
+            {
+                classDelete tbd = new classDelete(i);
+                tbd.Show();
+            }
         }
 
         public string GetClass()

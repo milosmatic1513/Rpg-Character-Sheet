@@ -45,3 +45,8 @@ J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\ob
 J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.Item.resources
 J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.Classes.resources
 J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.classRow.resources
+J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.comboBoxAdder.resources
+J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.deletableBar.resources
+J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.descriptionControl.resources
+J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.ToBeDeleted.resources
+J:\documents\Dionisis\ergasies\c#\dnd_sheet\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.classesMidway.resources

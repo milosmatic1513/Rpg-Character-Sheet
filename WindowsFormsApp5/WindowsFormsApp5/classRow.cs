@@ -13,7 +13,7 @@ namespace WindowsFormsApp5
     public partial class classRow : UserControl
     {
         public int columns;
-        List<TextBox> rch;
+        public List<TextBox> rch;
         bool isSpellSlot,changing;
 
         public classRow(int col,int level, bool s)
@@ -24,6 +24,33 @@ namespace WindowsFormsApp5
             rch = new List<TextBox>();
             isSpellSlot = s;
             changing = false;
+
+
+            rch.Clear();
+            int len = (this.Width - 30) / (columns - 1) - 5;
+            textBox1.Width = len;
+            if (isSpellSlot)
+            {
+                textBox1.TextChanged += keyListener_TextChanged;
+                textBox1.KeyDown += keyListener_KeyDown;
+            }
+            rch.Add(textBox1);
+            for (int i = 1; i < columns - 1; i++)
+            {
+                TextBox r = new TextBox();
+                rch.Add(r);
+                rch[i].BackColor = textBox1.BackColor;
+                rch[i].Font = textBox1.Font;
+                rch[i].ForeColor = textBox1.ForeColor;
+                rch[i].Size = textBox1.Size;
+                rch[i].Location = new Point(rch[i - 1].Location.X + rch[i - 1].Width + 5, textBox1.Location.Y);
+                if (isSpellSlot)
+                {
+                    rch[i].TextChanged += keyListener_TextChanged;
+                    rch[i].KeyDown += keyListener_KeyDown;
+                }
+                this.Controls.Add(rch[i]);
+            }
         }
 
         public void setLvlText(string l)
@@ -38,13 +65,12 @@ namespace WindowsFormsApp5
 
         public void setText(classRow s, bool changeLevel)
         {
-            classRow_Load(null, null);
-
             int t;
             if (s.columns < columns) t = s.columns;
             else t = columns;
-
-            for (int i = 0; i < t; i++)
+            
+            
+            for (int i = 0; i < t - 1; i++)
             {
                 rch[i].Text = s.getText()[i];
             }
@@ -74,30 +100,6 @@ namespace WindowsFormsApp5
 
         private void classRow_Load(object sender, EventArgs e)
         {
-            int len = (this.Width - 30) / (columns - 1) - 5;
-            textBox1.Width = len;
-            if (isSpellSlot)
-            {
-                textBox1.TextChanged += keyListener_TextChanged;
-                textBox1.KeyDown += keyListener_KeyDown;
-            }
-            rch.Add(textBox1);
-            for (int i = 1; i < columns; i++)
-            {
-                TextBox r = new TextBox();
-                rch.Add(r);
-                rch[i].BackColor = textBox1.BackColor;
-                rch[i].Font = textBox1.Font;
-                rch[i].ForeColor = textBox1.ForeColor;
-                rch[i].Size = textBox1.Size;
-                rch[i].Location = new Point(rch[i-1].Location.X + rch[i-1].Width + 5, textBox1.Location.Y);
-                if (isSpellSlot)
-                {
-                    rch[i].TextChanged += keyListener_TextChanged;
-                    rch[i].KeyDown += keyListener_KeyDown;
-                }
-                this.Controls.Add(rch[i]);
-            }
         }
 
         private void keyListener_TextChanged(object sender, EventArgs e)

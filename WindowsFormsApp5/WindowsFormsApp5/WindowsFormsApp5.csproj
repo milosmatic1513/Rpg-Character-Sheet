@@ -57,11 +57,35 @@
     <Compile Include="AbilitySkill.Designer.cs">
       <DependentUpon>AbilitySkill.cs</DependentUpon>
     </Compile>
+    <Compile Include="classesMidway.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="classesMidway.Designer.cs">
+      <DependentUpon>classesMidway.cs</DependentUpon>
+    </Compile>
     <Compile Include="classRow.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="classRow.Designer.cs">
       <DependentUpon>classRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="comboBoxAdder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="comboBoxAdder.Designer.cs">
+      <DependentUpon>comboBoxAdder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="deletableBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="deletableBar.Designer.cs">
+      <DependentUpon>deletableBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="descriptionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="descriptionControl.Designer.cs">
+      <DependentUpon>descriptionControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -127,6 +151,12 @@
     <Compile Include="Spell_creation.Designer.cs">
       <DependentUpon>Spell_creation.cs</DependentUpon>
     </Compile>
+    <Compile Include="classDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="classDelete.Designer.cs">
+      <DependentUpon>classDelete.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AbilityScore.resx">
       <DependentUpon>AbilityScore.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,8 +166,20 @@
     <EmbeddedResource Include="Classes.resx">
       <DependentUpon>Classes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="classesMidway.resx">
+      <DependentUpon>classesMidway.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="classRow.resx">
       <DependentUpon>classRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="comboBoxAdder.resx">
+      <DependentUpon>comboBoxAdder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="deletableBar.resx">
+      <DependentUpon>deletableBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="descriptionControl.resx">
+      <DependentUpon>descriptionControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -174,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Spell_creation.resx">
       <DependentUpon>Spell_creation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="classDelete.resx">
+      <DependentUpon>classDelete.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
